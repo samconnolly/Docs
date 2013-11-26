@@ -1,0 +1,561 @@
+% blank .tex file
+%
+\documentclass[letters,useAMS,usenatbib]{samnote}
+\usepackage{graphicx}
+%\usepackage{fixltx2e}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{array,booktabs,tabularx}
+\usepackage{float}
+\usepackage[section]{placeins}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{4}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{IEEEtrantools}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[The Structure and Variability of Active Galactic Nuclei]{The Structure and Variability of Active Galactic Nuclei}
+
+\author[S. D. Connolly]{S. D. Connolly}
+
+%\subtitle{University of Southampton}
+
+\begin{document}
+
+%\date{Accepted 2012 March ##. Received 2012 March ##}
+
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2012}
+
+\vspace{\fill}
+ \begin{titlepage}
+    \vspace*{\fill}
+    \begin{center}
+      {\Huge \bf The Structure and Variability \\[0.2cm] of Active Galactic Nuclei}\\[1cm]
+      {\huge \bf 9-Month Report}\\[2cm]
+      
+      {\huge S. D. Connolly}\\[1cm]
+      {\Large Supervisor: I.M. McHardy}\\[0.4cm]
+
+    \end{center}
+    \vspace*{\fill}
+
+
+
+
+\label{firstpage}
+
+\begin{abstract}
+\vspace{0.5cm}
+\begin{center} 
+
+Active galactic nuclei (AGN) are thought to be supermassive black holes at the centre of galaxies
+which are accreting nearby material. The nature of these black holes, their surroundings 
+and their similarity to galactic black holes (GBHs), are currently
+a topic of great interest to researchers. By studying the spectra and variability of emission
+from such objects, we can learn a great deal about these subjects.
+
+In this work we present long-term X-ray spectral variability of the Seyfert
+galaxy NGC 1365. We find that the absorbing column
+decreases with increasing luminosity, but that this result is not due
+to changes in ionisation. We suggest that these observations might be
+interpreted in terms of a wind model in which the launch radius moves outwards with
+increasing luminosity. Thus, depending
+on the inclination angle of the disc relative to the observer, the absorbing column may decrease
+as the luminosity increases. 
+
+Further to this, we present a cross-correlation study of the nucleus of NGC 5548, a Seyfert galaxy,
+thought to be analogous to the `high-soft' state of GBHs. The nucleus' lightcurves in radio, from {\it AMI},
+and in X-rays, from {\it XMM Newton} and {\it SWIFT}, are found to be correlated with time lag of approximately
+40 days between variations in the X-ray and the radio. It therefore follows that the nuclear radio emission
+is linked to the same process producing the X-ray emission.
+
+\end{center} 
+\end{abstract}
+\vspace{\fill}
+
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\section{Introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Active Galactic Nuclei (AGN) are the central regions of `active galaxies', thought to contain a supermassive black hole, which are of comparable or greater brightness
+than the galaxy itself \citep{krolik}. The structure of the surroundings of these black holes is a well studied but still largely unknown topic; the most popular
+theory invokes a unification of the many of types of AGN through geometry, involving a large accretion disc surrounded by a parsec-scale torus of dusty matter, a
+broad-line emission region between the two and an outer narrow-line region (\citet{krolik88},\citet{bianchi12},\citet{urry95}). More recently, high-velocity features in
+AGN spectra have been attributed to an additional component, namely a `wind' emanating from the accretion disc, possessing its own emission and absorption properties
+\citep{elvis}. The exact nature of these components and the accuracy of this model is, however, still unclear.
+
+In addition to AGN structure, much recent research has looked into the possibility that the physics of black holes of all masses is the same, meaning the more detailed
+physics known about galactic black holes (GBHs) can be scaled up and applied to AGN \citep{mchardy06}. GBHs are often classified as being in one of a number of
+`states', believed to be dependent on the accretion rate in the system at the time of observation (\citet{mcclintock06}, \citet{fender04}). The
+majority of a black hole's time is spent in either the `low-hard state' or the `high-soft state', defined according to its luminosity and the hardness of its X-ray
+spectrum (\citet{jones11}, \citet{belloni10}). It is also thought that radio-emitting jets are present only when in the low-hard state. Seyfert galaxies are considered to
+be candidates for `high-soft' state AGN \citep{mchardy04}. If this is the case, radio-emitting jets would not be expected in Seyfert galaxies. Radio variability has,
+however been detected in Seyfert galaxies, although not extensively (\citet{neff83}, \citet{mundell09}). In order to ascertain whether this radio emission is due to
+existing radio jets, a correlation needs to be found between this and emission in another waveband, e.g. X-rays. \citet{king13} recently claimed to have found a weak
+correlation between the X-ray and radio emission of the Seyfert 1 galaxy NGC 4051, but, with \citet{jones11} claiming the opposite, the matter is still under debate.
+
+
+\subsection{X-ray Spectral Variability}
+
+Variability in the absorption of X-Ray emission from the nuclei of Seyfert 2 Galaxies has been found to be extremely common \citep{risaliti02}. By studying the X-ray
+spectral variability  of AGN, it is possible to make constraints on the nature of the environment surrounding the nucleus, thereby also probing the nature of
+the central object itself. Variability has largely been attributed to changes in the absorbing column between  the X-ray source and the observer \citep{risaliti02}.
+The detection of $N_H$ variability  on timescales of hours in some Seyfert galaxies has indicated that this absorbing material must be close to the nucleus, at a
+distance similar to that of the Broad Emission Line Region (e.g. \citet{elvis04}, \citet{puccetti}). Specific `occultations', seen as short-term changes in X-ray flux and
+spectral hardness, have led to claims of direct observations of Broad Line Region Clouds crossing the X-ray source \citep{risaliti07a}. 
+
+\subsection{Cross-Correlation of Multi-Wavelength Observations}
+
+Cross-correlation is a method for discovering whether two sets of data are correlated with one another with a given time delay. The method involves `sliding'
+one data set across the other and finding the degree of correlation at a range of `time lags'. Plotting the cross-correlation function (CCF) against the lag will then
+reveal a lag, if present, as a peak at the lag time by which one data set lags the other. 
+
+If lightcurves from two different wavelengths are cross-correlated, any correlation between them will reveal a causal connection between the two sets of emission.  In
+this case, the method is useful for discovering whether variability in radio emission is correlated with that of X-ray emission, as this would require the two to be as a
+result of the same process. Furthermore, the peak in the correlation coefficient shows the magnitude and 'sign' of any delay between the two data sets, i.e. which data
+set lags the other and by how long in time.
+
+\subsection{Objects}
+
+\subsubsection{NGC 1365}
+
+NGC 1365 is a nearby Seyfert galaxy, observations of which have found it to possess huge spectral variability \citep{risaliti09}, on timescales of hours to years,
+thought to be due to variations in a partially ionised absorber near the X-ray source \citep{brenneman}. Despite the number of studies of this object, all previous work
+has concentrated on detailed spectral analysis of the system at a single epoch, or short term variability between small numbers of observations. By contrast, in this work
+we study 50 {\it SWIFT} spectra taken over a period of six years. This data covers both a significantly longer time period and a far greater flux range than previous
+studies, allowing the study of long term-trends.
+
+\subsubsection{NGC 5548}
+
+NGC 5548 is a Seyfert galaxy possessing relatively strong radio emission from its nucleus, in addition to two diffuse, low luminosity lobes \citep{wilson82}.
+The nucleus was found to be variable in radio by \citet{wroble00}, indicating that jets are present. Beyond this, little radio data has been published
+regarding NGC 5548. In this work, we carry out cross-correlation of this system, using simultaneous radio data from the {\it AMI} radio array and X-ray data from {\it
+SWIFT} and the {\it RXTE}. This has enabled a possible link between X-ray and radio variability to be detected.
+
+\clearpage
+
+\section{Current Work}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{X-ray Spectral Variability}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Observations \& Data Reduction} \label{reduction}
+
+The observations of NGC 1365 were performed using the {\it SWIFT XRT}, between 21 July 2006 and 17 March 2013. A total of 81 spectra were taken over more than 220
+kiloseconds of exposure time. Individual exposure times ranged from $<100$ seconds to $>17$ kiloseconds. 31 spectra were rejected on the basis of low total counts in the
+exposure or artifacts near the source, leaving 50 usable spectra, consisting of $\sim 140$ kiloseconds of data. 
+
+The {\it XRT} data were automatically reduced using version 0.12.4 of the {\it Swift} XRTPIPELINE software. The XSELECT tool was used to extract background-subtracted
+spectra and lightcurves. The observed XRT count rates were carefully corrected for the fraction of counts lost due to bad pixels and columns, vignetting effects, and
+the finite extraction aperture. Fig. \ref{lc} shows a lightcurve of the data. 
+
+
+\subsubsection{Data Analysis}
+
+\paragraph{Spectral Hardness}
+
+Plots of the hardness ratio against the hard count rate, and the hard count rate against the soft rate of the spectrum are shown in Fig. \ref{hardness}.
+In each case, hard emission is defined as $2.0 - 10.0$ keV and soft emission as $0.5-2.0$ keV. The hardness ratio is defined as: 
+
+\begin{equation*}
+{\rm Hardness\; Ratio = \frac{Hard\;Counts - Soft\;Counts}{Hard\;Counts + Soft\;Counts}}
+\\
+\end{equation*}
+
+\hspace{1cm}
+
+The plots show the spectrum to be extremely soft at very low fluxes, but to become hard very rapidly with with increasing flux. Beyond this sharp rise, still at
+relatively low flux, the hardness decreases again more gradually with increasing flux, as often seen in Seyfert galaxies (e.g. \citet{sobolewska}, \citet{lamer}). 
+The data display a relatively small amount of scatter about this general trend; for this reason, the shape of the spectrum can be assumed to be approximately similar at a
+given flux level, independent of time. This implies that the system is behaving in approximately the same manner at each flux level, irrespective of what state the system
+was in at an earlier time.
+
+\begin{figure}
+
+	\includegraphics[width = 9cm,height = 6cm,clip = true, trim = 0 0 0 0]{brokenlcwidemag.eps}
+	\includegraphics[width = 6cm,height = 6cm,clip = true, trim = 0 0 0 0]{magplot.eps}
+	\caption{{\it left:} The SWIFT X-ray lightcurve of NGC 1365, with a broken axis where data was not taken. {\it right:} The highlighted section of the light
+curve, during which more intensive {\it SWIFT} monitoring was taking place, expanded.}
+	\label{lc}
+
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width = 10cm,clip = true, trim = 0 0 0 0]{binhardfaint.eps}
+	\caption{Top: hard count rate against hardness ratio of NGC 1365. Bottom: hard count rate against soft count rate. 
+	In each case, the data is binned such that each bin contains a minimum of 5 data points. Errors correspond to one
+	standard deviation of the distribution in each bin.}
+	\label{hardness}
+\end{figure}
+				
+
+
+\paragraph{Spectral Modelling}
+
+\begin{table*}
+	\centering
+	\footnotesize
+	\begin{tabular}{| p{5cm}|| >{\centering}p{2.2cm} | >{\centering}p{2.2cm} | >{\centering}p{2.2cm} || >{\centering}p{0.55cm} | p{0.55cm}  |} \hline
+		
+	\multirow{2}{*}{Model}		   	& \multicolumn{3}{c||}{Parameters}			&\multirow{2}{*}{$\chi^2_{Red}$}&\multirow{2}{*}{DoF} \\
+\hhline{~---~~}   
+						& Spectral index& Absorbing column	& Ionisation	& 		& \\ 	   \hline \hline
+	Absorbed and  unabsorbed power laws	& Fixed		& Free 			& Free		& 1.41	 	& 1069 \\  \hline	
+	
+	Absorbed and unabsorbed power laws	& Fixed		& Free 			& Tied 		& 1.41		& 1078 \\  \hline
+	Absorbed and unabsorbed power laws	& Fixed		& Tied			& Free  	& 2.42		& 1078 \\  \hline \hline
+	
+	Absorbed and unabsorbed power laws 	& Tied		& Free			& Free		& 1.17		& 1068 \\  \hline \hline
+
+	Absorbed and unabsorbed power laws 	& Free		& Free			& Free		& 1.10		& 1060 \\  \hline
+	Absorbed and unabsorbed power laws 	& Free		& Free			& Tied		& 1.12		& 1069 \\  \hline
+	Absorbed and unabsorbed power laws 	& Free		& Tied			& Free		& 1.64		& 1069 \\  \hline \hline
+
+	Single, absorbed power	law		& Free		& Free 			& Free		& 1.26		& 1069 \\  \hline	
+	Single, absorbed power	law		& Free		& Free			& Tied 		& 1.75		& 1078 \\  \hline				
+	Single, absorbed power	law		& Free		& Tied			& Free		& 1.76		& 1078 \\  \hline		
+		
+	\end{tabular}
+		
+	\caption{Summary of the main components of each model fitted to the average spectra, showing the parameters which were fixed, tied or left free in each case, and
+the reduced $\chi^2$ value and number of degrees of freedom (DoF) of the best fit with each model. Fixed parameters were not allowed to vary. Tied parameters were
+required to be the same for each of the ten spectra, but allowed to vary. Free parameters were allowed to vary between the fits to individual spectra. }
+	\label{table}
+\end{table*}
+
+This similarity in spectral shape allowed spectra of a similar flux to be combined, producing average spectra possessing the average spectral shape at each flux level.
+This allowed better spectral fits than possible with individual spectra. The 50 spectra were divided into 10 flux bins and combined using the {\it HEADAS} tool
+`addspec'. Each of these spectra were then grouped using the {\it HEADAS} tool `grpspec' (see Fig. \ref{spectra}).
+
+A variety of models were fitted to the spectra using {\it XSPEC} \citep{arnaud}. The models were fitted simultaneously to all 10 average
+spectra, in order discover the cause of variations in the shape of the spectrum with changing flux. It was discovered that a single, absorbed power law of fixed
+spectral index, fitted the lowest and highest flux observations well, but was insufficient to give a good fit at intermediate fluxes.
+
+Good fits were obtained at all fluxes using a pivoting, absorbed power law, but they required a large range of spectral indices and very low indices at
+high fluxes, regarded as unlikely in Comptonisation models \citep{ponti}. In previous work, Seyfert galaxies requiring this range of spectral indices have instead been
+fitted with two-component models with a constant spectral index (e.g. NGC 4051 \citep{ponti}). Similar two-component models were therefore fitted to the data,
+consisting of two power laws, one of which is absorbed by material whose absorbing column and/or ionisation state is allowed  to vary. This allowed the spectra at all
+flux levels to be well fit. 
+
+The main components of each model are described in Table \ref{table}. In models in which the spectral index was fixed, it was set at 1.95, the value found by
+\citet{risaliti13}. The absorbed power law used the `Absori' model for an ionised photoelectric absorber. An emission line, most likely to be due to an iron L-shell
+transition, was added to all of the models. 
+
+Leaving the ionisation state to vary, but tying the absorbing column, was found to be insufficient to account for the degree of variation observed in the spectra, for
+both a pivoting power law and the two-component model. Tying the ionisation state whilst leaving the absorbing column free to vary, however, gave good fits with the
+two-component model. Significantly, in the two-component model the $\chi^2$ value remained the same when the ionisation state was tied, as it varied very little even
+when left free together with the absorbing column. The pivoting, single power law model gives a significantly worse fit in this case. We therefore believe
+that the two-component model with a varying absorbing column describes the data best.
+
+\paragraph{Two-Component Spectral Variability}
+
+\begin{figure}
+	\includegraphics[height = \columnwidth,
+	angle = 270,trim = 30 100 10 70,clip = true]{4spec.ps}
+	\caption{A sample of the set of average spectra produced by combining 
+	spectra in the same flux range. The spectra are fitted with the best fitting model,
+	consisting of two power laws, one of which is absorbed and one of which is not.}
+	\label{spectra}
+\end{figure} 
+
+Fig. \ref{spectra} shows a sample of the average spectra at different flux levels, fitted with the two-component model described above.
+In this case, the spectrum is composed of two power laws - an unabsorbed component and an absorbed component, which can be seen to vary by a large degree as the
+absorbing column changes.  
+
+\begin{figure}
+	
+	\includegraphics[width = 9cm,trim = 20 0 0 0, clip=true]{nHvNorm2.eps}\hspace{1pt}
+	\includegraphics[width = 7.7cm,trim = 20 0 10 0, clip=true]{norm2Vnorm1.eps}\hspace{1pt}
+	\caption{The normalisation parameter of the absorbed power law 
+		against the absorbing column of the absorbing material in
+		the model described above.}
+	
+	\label{normplots}
+\end{figure}  
+
+
+\subsubsection{Discussion}
+
+\paragraph{A Possible Link Between Source Flux and Column Density}
+
+An important implication of the best fitting parameters of this model is that the absorbing column of absorbing material seems to be inversely correlated with the
+normalisation parameter of the absorbed power law, equivalent to the flux prior to absorption (see Fig. \ref{normplots}). As spectral fits show that ionisation changes
+cannot explain variability, another physical explanation is needed - a possible solution is variations in an `X-ray wind' of absorbing material rising from the accretion
+disc.
+
+Fig. \ref{normplots} also shows the relative variation of the two power law normalisation parameters, demonstrating them to be approximately correlated.
+This correlation implies that the two components are causally linked, as would be expected if the absorbed component corresponded to direct emission absorbed by material
+along the line of sight and the unabsorbed component corresponded either to direct emission which has not encountered any absorbing material, i.e. due to partial
+covering, and/or scattered emission.				
+ 
+
+
+
+\paragraph{AGN Wind Model}
+
+
+In the AGN wind model proposed by \citet{elvis}, absorbing material arises from a narrow range of accretion disc radii in a biconical `wind'; in this model
+an increase in X-ray luminosity causes the opening angle between the wind and the disc to decrease, hypothesised as due to the increased radiation pressure. Models by
+\citet{nicastro} show that a higher accretion rate could also lead to an increase in the launch radius of the wind. \citet{tombesi} suggested that the X-ray absorbing
+component of the wind has a density gradient, such that the density decreases with decreasing radius. In the context of the wind model described above, this would mean
+that a change in the X-ray luminosity of the nucleus would cause a change in the absorbing column through which the source is observed for some viewing angles. If the
+observer is viewing the X-ray source through an inner part of the X-ray-absorbing wind, an increase in X-ray luminosity would lead to a decrease in the absorbing column
+of the section of the wind through which the source is being observed. This would lead to a negative correlation between the absorbing column of absorbing material and
+the X-ray luminosity of the nucleus, as found in our spectral fits. The reflected component seen in our spectra could, in this case, correspond to a component of the
+X-ray emission scattered from the inner edge of the disc wind.
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Cross-Correlation of Multiwavelength Data}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Observations \& Data Reduction}
+
+Data from {\it SWIFT}, {\it RXTE} and the {\it AMI} radio array were all used for this study. The {\it SWIFT} data was reduced in the same manner as described in section
+\ref{reduction}. The {\it RXTE} and {\it AMI} data were both reduced, carefully, by others. The combined X-ray lighturve is shown plotted together with the {\it AMI}
+radio lightcurve in Fig. \ref{twoLCs}. 
+
+ 
+
+\subsubsection{Data analysis}
+
+\paragraph{Discrete Cross-Correlation}
+
+The data were cross-correlated using the `discrete' method; each mean-subtracted data point in the X-ray
+data is multiplied by every data point in the the radio data. These values are divided by the product of the standard
+deviations of both data sets and the total number of data points (N), giving the correlation coefficients:
+
+\begin{equation}
+Correlation\;Coefficient = \frac{1}{N} \frac{(x_{t_i} - \bar{x}) (y_{t_i} - \bar{y})}{\sigma_x \sigma_y} 
+\end{equation}
+\hspace{2cm}
+
+The time difference between each pair of data points is also found. This gives the correlation coefficient for a large number of exact time
+lags, but only for single pairs of data points. By binning these data into time lag bins, the average degree of correlation within each time bin can be
+found, creating a CCF. 
+
+
+\paragraph{Lightcurve simulation}
+
+It is necessary to create confidence curves in order to be able to determine the significance of any peaks in the CCF. This is achieved by the creation of
+artificial lightcurves which possess the same statistical properties as one data set, then cross-corellating these lightcurves with the second data set. In this way, the
+likelihood that peaks in the CCF can be produced randomly can be determined and displayed as confidence curves.
+
+Artificial lightcurves were produced with the \citet{timmer&koenig} method, using the power spectrum of the real lightcurve. In this case the
+power spectrum was already known, so values from \citet{uttley} were used - the power spectrum approximately follows a broken power law given by: 
+
+
+\begin{equation}
+PSD(\nu) =
+\begin{cases}
+\nu^{-\alpha_{low}} & \text{if } \nu <= \nu_{break}
+\\
+\nu_{break}^{\alpha_{high}-\alpha_{low}}\times \nu^{-\alpha_{high}}  & \text{if } \nu > \nu_{break}
+\end{cases}
+\end{equation}
+\hspace{2cm}
+
+\noindent where $PSD(\nu)$ is the power spectral density at frequency $\nu$, the spectral index above and below the break are $\alpha_{low}  = 2.40$ and $\alpha_{high} =
+1.00$, and $\nu_{break} = 5.14\times10^{-5}$ is the break frequency.
+
+For each artificial spectrum created, Gaussian-distributed random numbers are used to produce a `noisy' periodogram from the power spectrum. The inverse Fourier transform
+of this is an artificial lightcurve. The mean and standard deviation are adjusted to match those of the original lightcurve, then it is artificially sampled with the same
+sampling pattern as the data. The result is a lightcurve whose statistical properties are identical to that of the real lightcurve. An example of an artificial lightcurve
+compared to the real X-ray light curve is shown in Fig. \ref{simlc}.
+
+
+ 
+\paragraph{Confidence curves}
+
+Confidence curves are created by producing a grid of CCFs for multiple artificial spectra. To find the 90\% confidence levels, for example, the 90th quantiles of each
+time bin divided by the typical peak width in the CCF, calculated by finding the FWHM of the autocorrelation function of the data. These values are then plotted together
+with the CCF; any peaks which lie above this line can be assumed to be real with a likelihood given by that limit.
+ 
+ 
+ 
+ \paragraph{Results}
+ 
+ \begin{figure}
+	\includegraphics[width = 14cm,trim = 0 0 0 0, clip=true]{xcor5548.eps}
+
+	\caption{The CCF of NGC 5548; overplotted are the 90\% (red) and 99\% (blue) confidence levels. The only peak
+	lying above the 99\% confidence level hints at a correlation with a delay of $\sim 40$ days.}
+	\label{xcor}
+\end{figure}
+ 
+The CCF for the X-ray and radio data from NGC 5548 is shown in Fig. \ref{xcor}. Two peaks are seen
+in the data which lie above the 90\% confidence level, one at $\sim 40$ days and one at $\sim 120$ days. Only the 40 day peak lies above the 99\% confidence level,
+however, meaning this is the the only lag which is very likely to be real. 
+ 
+  \begin{figure}
+	\includegraphics[width = 14cm,trim = 0 0 0 0, clip=true]{LCcomp.eps}
+
+	\caption{An example of a simulated lightcurve ({\it right}) compared to the real X-ray lightcurve of NGC 5548 ({\it left}). The similarity in the variability
+is readily apparent.}
+	\label{simlc}
+\end{figure}
+ 
+\begin{figure}
+	
+	\includegraphics[width = 14cm,trim = 20 0 0 0, clip=true]{5548doubleLC.eps}\hspace{1pt}
+	\caption{The X-ray ({\it top}) and radio ({\it bottom}) lightcurves of NGC 5548.}
+	
+	\label{twoLCs}
+\end{figure} 
+ 
+ \subsubsection{Discussion}
+ 
+The data shows that that the variability in the radio emission lags the variability in the X-ray emission from NGC 5548, by a period of
+approximately 40 days, with 99\% certainty (see Fig. \ref{compLCs}). This implies that the same process leads to variability in both sets of emission, indicating the
+presence of jets. This is incompatible with most definitions of the `high-soft' state, though a second, similar state for GBHs has been suggested by \citet{gallo12} which
+would be analogous to radio-loud, soft AGN.
+ 
+
+ 
+\begin{figure}
+	
+	\includegraphics[width = 14cm,trim = 20 0 0 0, clip=true]{5548overlapLC.eps}\hspace{1pt}
+	\caption{The X-ray  ({\it red}) and radio  ({\it blue}) lightcurves of NGC 5548 overlaid, with a 40 day lag subtracted from the radio data. A similarity in the
+variation in the lightcurves can be seen by eye.}
+	
+	\label{compLCs}
+\end{figure}  
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+
+\section{Future Work}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{X-ray Spectral Variability}
+
+In addition to NGC 1365, a large amount of {\it SWIFT} data is available on NGC 4395; 225 observations consisting of over 300 kiloseconds, covering a period of over 12
+years. NGC 4395 is a Seyfert 1 galaxy possessing huge variability, similar to NGC 1365 \citep{vaughan05}. This variability is also seen to be very rapid and has been
+hypothesised to be at least partly due to variations in an absorber analogous to that proposed here for NGC 1365 \citep{iwasawa00}. It is therefore my intention to apply
+the same methods as used for NGC 1365 to NGC 4395, in order to discover whether there are any parallels between what appear to be similar systems.
+
+
+\subsection{Cross Correlation of Multiwavelength Data}
+
+ A huge amount of {\it SWIFT} data is also available on the active nucleus of M81, including data which is simultaneous with data from the {\it Very Long Baseline
+Interferometer} ({\it VLBI}). It is therefore possible to carry out a similar multi-wavelength correlation study on the X-ray and radio emission from this AGN, in order
+to determine whether any links between these wavebands exist. It is my intention do carry out such a study. 
+
+\begin{thebibliography}{99}
+
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    \bibitem[\protect\citeauthoryear{Arnaud}{1996}]{arnaud}  Arnaud, K.A., 1996, Astronomical Data Analysis Software and Systems V, 101, 17.
+
+    \bibitem[\protect\citeauthoryear{Belloni}{2010}]{belloni10} Belloni, T. M., 2010, LNP, 794, 53.
+    \bibitem[\protect\citeauthoryear{Bianchi et al.}{2012}]{bianchi12} Bianchi, S., Maiolino, R., Risaliti, G., 2012, AdAst, 2012, 17.
+    \bibitem[\protect\citeauthoryear{Brenneman et al.}{2013}]{brenneman} Brenneman, L. W., Risaliti, G., Elvis, M., Nardini, E., 2013 MNRAS, 429, 2662.
+    \bibitem[\protect\citeauthoryear{Braito et al.}{2012}]{braito} Braito, V., Ballo, L., Reeves, J. N., Risaliti, G., Ptak, A., Turner, T. J., 2012, MNRAS, 428, 2516.
+    
+    \bibitem[\protect\citeauthoryear{Done et al.}{1996}]{done} Done, C., Madejski, G. M., Smith, D. A., 1996, ApJ, 463, 63.
+    
+    \bibitem[\protect\citeauthoryear{Elvis}{2000}]{elvis} Elvis, M., 2000, ApJ, 545, 63.
+    \bibitem[\protect\citeauthoryear{Elvis et al.}{2004}]{elvis04} Elvis, M., Risaliti, G., Nicastro, F., Miller, J. M., Fiore, F., Puccetti, S., 2004, ApJ, 615, 25.
+    
+    \bibitem[\protect\citeauthoryear{Fabian et al.}{2003}]{fabian03} Fabian, A. C., Vaughan, S., 2003, MNRAS, 340, 28.
+    \bibitem[\protect\citeauthoryear{Fabian et al.}{2009}]{fabian09} Fabian, A. C., Zoghbi, A., Ross, R. R., Uttley, P., Gallo, L. C., Brandt, W. N., Blustin, A. J.,
+    Boller, T.,  Caballero-Garcia, M. D., Larsson, J., Miller, J. M., Miniutti, G., Ponti, G., Reis, R. C., Reynolds, C. S., Tanaka, Y., Young, A. J., 2009, Nature, 459,
+    540.
+    \bibitem[\protect\citeauthoryear{Fender et al.}{2004}]{fender04} Fender, R. P., Belloni, T. M., Gallo, E., 2004, MNRAS, 355, 1105.
+    \bibitem[\protect\citeauthoryear{Fender et al.}{2009}]{fender09} Fender, R. P., Homan, J., Belloni, T. M., 2009, MNRAS, 396, 1370.
+    
+    \bibitem[\protect\citeauthoryear{Gallo et al.}{2012}]{gallo12} Gallo, E., Miller, B. P., Fender, R., 2012, MNRAS, 423, 590.
+    
+    \bibitem[\protect\citeauthoryear{Iyomoyo et al.}{1997}]{iyomoyo} Iyomoyo, N., Makishima, K, Fukazawa, Y., Tashiro, M. Ishisaki, Y., 1997, PASJ, 49, 425.
+    \bibitem[\protect\citeauthoryear{Iwasawa et al.}{2000}]{iwasawa00} Iwasawa, K., Fabian, A. C., Almaini, O., Lira, P., Lawrence, A., Hayashida, K., Inoue, H., 2000,
+MNRAS, 318, 879.
+    
+    \bibitem[\protect\citeauthoryear{Jones et al.}{2011}]{jones11} Jones, S.,  McHardy, I., Moss, D., Seymour, N., Breedt, E., Uttley, P., K\"{o}rding, E., Tudose, V.,
+2011, MNRAS, 412, 264.
+
+    \bibitem[\protect\citeauthoryear{King et al.}{2013}]{king13} King, A. L., Miller, J. M., Reynolds, M. T., Gultekin, K., Gallo, E., Maitra, D., 2013, arXiv, 1307.5249.
+    \bibitem[\protect\citeauthoryear{Krolik \& Bianchi}{1988}]{krolik88} Krolik, J. H., Begelman, M. C., 1988, ApJ, 329, 702.
+    \bibitem[\protect\citeauthoryear{Krolik}{1999}]{krolik} Krolik, J. H., 1999, `Active Galactic Nuclei: From the Central Black Hole to the Galactic Environment',
+Chichester: Princeton University Press.
+    
+    \bibitem[\protect\citeauthoryear{Lamer et al.}{2003}]{lamer} Lamer, G., McHardy, I. M., Uttley, P., Jahoda, K., 2003, MNRAS, 338, 323.
+    \bibitem[\protect\citeauthoryear{Lavaux \& Hudson}{2011}]{lavaux} Lavaux, G., Hudson, M. J., 2011, MNRAS, 416, 2840.
+    
+    \bibitem[\protect\citeauthoryear{Matt et al.}{2003}]{matt} Matt, G., Guainazzi, M., Maiolino, R., 2003, MNRAS, 342, 422.
+    \bibitem[\protect\citeauthoryear{Markowitz et al.}{2008}]{markowitz} Markowitz, A., Reeves, J. N., Miniutti, G., Serlemitsos, P., Kunieda, H., Yaqoob, T., Fabian, A.
+    C., Fukazawa, Y., Mushotzky, R., Okajima, T., Gallo, L. C., Awaki, H., Griffiths, R. E., 2008, PASJ, 60, 277.
+    \bibitem[\protect\citeauthoryear{McHardy et al.}{2004}]{mchardy04} McHardy, I. M., Papadakis, I. E., Uttley, P., Page, M. J., Mason, K. O., 2004, MNRAS, 348, 783.
+    \bibitem[\protect\citeauthoryear{McHardy et al.}{2006}]{mchardy06} McHardy, I. M., Koerding, E., Knigge, C., Uttley, P., Fender, R. P., 2006, Nature, 444, 730.
+    \bibitem[\protect\citeauthoryear{McClintock \& Remillard}{2006}]{mcclintock06} McClintock, J. E., Remillard, R. A., 2006, `Black hole binaries', pp 157–213.
+    \bibitem[\protect\citeauthoryear{Mundell et al.}{2009}]{mundell09} Mundell C. G., Ferruit P., Nagar N., Wilson A. S., 2009, ApJ, 703, 802.
+    
+    \bibitem[\protect\citeauthoryear{Neff \& Bruyn}{1983}]{neff83} Neff S. G., de Bruyn A. G., 1983, A\&A, 128, 318.
+    \bibitem[\protect\citeauthoryear{Nicastro}{2000}]{nicastro} Nicastro, F., 2000, ApJ, 530, 65.
+    
+    \bibitem[\protect\citeauthoryear{Papadakis et al.}{2009}]{papadakis} Papadakis, I. E., Sobolewska,  M., Arevalo,  P., Markowitz, A., McHardy, I. M., Miller,  L.,
+    Reeves, J. N., Turner, T.J., 2009, A\&A, 494, 905.
+    \bibitem[\protect\citeauthoryear{Ponti et al.}{2006}]{ponti} Ponti, G., Miniutti, G., Cappi, M., Maraschi, L., Fabian, A. C., Iwasawa, K., 2006, MNRAS, 368, 903.
+    \bibitem[\protect\citeauthoryear{Puccetti et al.}{2007}]{puccetti} Puccetti, S., Fiore, F., Risaliti, G., Capalbi, M., Elvis, M., Nicastro, F., 2007, MNRAS, 377, 607.
+    
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2009}]{risaliti09} Risaliti, G., Miniutti, G., Evlis, M., Fabbiano, G., Salvati, M., Baldi, A., Braito, V., 
+									 Bianchi, S., Matt, G., Reeves, J., Soria, R., Zezas, A., 2009, ApJ,696,160. 
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2013}]{risaliti13} Risaliti, G., Harrison, F. A., Madsen, K. K., Walton, D. J., Boggs, S. E., Christensen,  F. E., 
+							Craig, W.W., Grefenstette, B. W., Hailey, C. J., Nardini, E., Stern, D., Zhang, W. W., 2013, Nature, 494, 449. 
+    \bibitem[\protect\citeauthoryear{Risaliti}{2007A}]{risaliti07a} Risaliti, G., 2007,ASPC, 373, 458
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2007B}]{risaliti07b} Risaliti, G., Elvis, M., Fabbiano, Baldi, A.,Zezas, A., Salvati, M., 2007, ApJ, 659, 111.
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2002}]{risaliti02} Risaliti, G., Elvis, M., Nicastro, F., 2002, ApJ, 571, 234.
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2000}]{risaliti00} Risaliti, G., Maiolino, R., Bassani, L., A\&A, 365, 33.
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2005A}]{risaliti05a} Risaliti, G.,Bianchi, S., Matt, G., Baldi, A., Elvis, M., Fabbiano, G., Zezas, A., 2005, ApJ,
+    630, 129.
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2005B}]{risaliti05b} Risaliti, G., Elvis, M., Fabbiano, G., Baldi, A., Zezas, A., 2005, ApJ, 623, 93.
+    
+    \bibitem[\protect\citeauthoryear{Sobolewska \& Papadakis}{2009}]{sobolewska} Sobolewska, M. A., Papadakis, I. E., 2009, MNRAS, 399, 1597.
+    \bibitem[\protect\citeauthoryear{Stirling et al.}{2001}]{stirling01} Stirling, A. M., Spencer, R. E., de la Force, C. J., Garrett, M. A., Fender, R. P., Ogley, R.
+N., 2001, MNRAS, 327, 1273.
+    
+    \bibitem[\protect\citeauthoryear{Timmer \&  K\"{o}nig}{1995}]{timmer&koenig} Timmer, J., K\"{o}nig, M., 1995, A\&A, 300, 707.
+    \bibitem[\protect\citeauthoryear{Tombesi et al.}{2013}]{tombesi} Tombesi, F., Cappi, M., Reeves, J., Nemmen, R. S., Braito, V., Gaspari, M., Reynolds, C. S., 2013,
+    MNRAS, 430, 1102.
+    
+    \bibitem[\protect\citeauthoryear{Urry \& Padovani}{1995}]{urry95} Urry, C. M., Padovani, P., 1995, PASP, 107, 803.
+    \bibitem[\protect\citeauthoryear{Uttley}{2000}]{uttley} Uttley, P., 2000, `Timing Studies of Seyfert Galaxies with the Rossi X-ray Timing Explorer', Ph.D. Thesis,
+University of Southampton.
+    
+    \bibitem[\protect\citeauthoryear{Vaughan et al.}{2005}]{vaughan05} Vaughan, S., Iwasawa, K., Fabian, A. C., Hayashida, K., 2005, MNRAS, 356, 524.
+    
+    \bibitem[\protect\citeauthoryear{Wilson \& Ulvestad}{1982}]{wilson82} Wilson, A. S., Ulvestad, J. S., 1982, ApJ, 260, 56.
+    \bibitem[\protect\citeauthoryear{Wroble}{2000}]{wroble00} Wroble, J. M., 2000, ApJ, 531, 716.
+    
+\end{thebibliography}
+
+
+%\appendix
+
+\label{lastpage}
+
+\end{document}

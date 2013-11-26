@@ -1,0 +1,671 @@
+% ngc1365 .tex file
+%
+\documentclass[useAMS,usenatbib]{sam}
+\usepackage{graphicx}
+%\usepackage{fixltx2e}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{array,booktabs,tabularx}
+\usepackage{amsmath}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[The Long Term X-Ray Spectral Variability of NGC 1365 with {\it SWIFT}]{The Long Term X-Ray Spectral Variability of NGC 1365 with {\it SWIFT}}
+
+\author[S. D. Connolly, I.M. McHardy and T. Dwelly]{S. D. Connolly$^{1}$\thanks{E-mail: sdc1g08@soton.ac.uk}, I.M. McHardy$^{1}$, T. Dwelly$^{1,2}$ \\
+$^{1}$University of Southampton, Highfield, Southampton, SO17 1BJ, UK\\
+$^{2}$Max-Planck-Institut f\"{u}r Extraterrestrische Physik, Giessenbachstrasse 1, 85748, Garching, DE}
+
+\begin{document}
+
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2012}
+
+\maketitle
+
+\label{firstpage}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{abstract}
+
+We present long-term (months-years) X-ray spectral variability of the
+Seyfert 1.8 galaxy NGC 1365 as observed by {\it SWIFT}, which provides
+well sampled observations over a much longer timescale (6 years) and a
+much larger flux range than is afforded by other observatories. At
+very low luminosities the spectrum is very soft, becoming rapidly
+harder as the luminosity increases and then, above a particular
+luminosity, softening again.  At a given flux level, the scatter
+in hardness ratios is not very great, meaning that the spectral shape is
+largely determined by the luminosity.  The spectra were summed in
+luminosity bins and fitted with a variety of models. The best fitting model
+consists of two power laws, one unabsorbed and another, more luminous,
+which is absorbed. Interestingly, we find that the absorbing column
+decreases with increasing luminosity, but that this result is not due
+to changes in ionisation. We suggest that these observations might be
+interpreted in terms of a wind model in which the launch radius is
+fixed at a particular disc temperature and therefore moves outwards with
+increasing accretion rate, i.e. increasing luminosity. Thus, depending
+on the inclination angle of the disc relative to the observer, the absorbing column may decrease
+as the accretion rate goes up. The weaker, unabsorbed, component may
+be a scattered component from the wind. 
+
+\end{abstract}
+
+\begin{keywords}
+X-ray spectral variability, absorption – galaxies: NGC 1365 – galaxies: Seyfert
+\end{keywords}
+
+%====================================================================================================================================================================
+\section{Introduction}
+%====================================================================================================================================================================
+
+X-ray spectral observations of Seyfert galaxies have shown that variability in the column of absorbing material between the X-ray source and the observer is extremely
+common \citep{risaliti02}. The detection of variable absorption on a timescales of hours has indicated that the absorbing material must be close to the nucleus, at a
+distance similar to that of the Broad Emission Line Region  (e.g. \citet{lamer}, \citet{elvis04}, \citet{puccetti}), with claims that complete occultations by Broad Line
+Region clouds have been observed on timescales of days \citep{risaliti07a}.
+
+
+NGC 1365 is a nearby Seyfert 1.8 galaxy \citep{maiolino95} which displays a large amount of X-ray spectral variability \citep{risaliti09} on timescales of hours
+to years \citep{brenneman}. These variations have been interpreted as the spectrum changing from being `transmission dominated' to `reflection
+dominated'. When the spectrum is `transmission dominated' (e.g. \citet{risaliti00}) the absorbing material is Compton thin and the transmitted component dominates the
+spectrum; when the spectrum is `reflection dominated' (e.g. \citet{iyomoyo}) the absorbing material is Compton thick, meaning the majority of direct emission is absorbed
+and reflected emission dominates the spectrum (\citet{risaliti07b}, \citet{matt}). 
+
+%The possibility that these variations are due to intrinsic changes in the source spectrum was ruled out following observations of spectral transitions between these
+%observed properties on timescales too short to be accounted for by intrinsic variability (\citet{risaliti05a}, \citet{risaliti07b}). The rapidity of changes to the
+%spectrum of NGC 1365, on time scales of days, have led to claims that complete occultations by Broad Line Region clouds have been observed.
+
+The possibility that the spectral variations were entirely due to intrinsic changes in the source spectrum has been deemed unlikely because the amplitude of variation
+seen on timescales of weeks cannot easily be explained with intrinsic variation alone - the intrinsic flux would be required to change by almost two orders of magnitude
+in this time, necessitating a the X-ray source to switch off completely and on again during this period (\citep{risaliti07b},\citep{risaliti05b}). 
+
+A large number of absorption and emission lines have been seen in the spectrum, attributed to FeXXV and FeXXVI K$\alpha$ and K$\beta$ transitions, which are generally
+found not to vary significantly \citep{risaliti05b}.
+
+
+
+%Despite the number of studies of this object, all previous work has concentrated on detailed spectral analysis of the system at a single epoch, or short term
+%variability between small numbers of observations. By contrast, in this work we study 190 {\it SWIFT} spectra taken over a period of six years, in order to discover long
+%term trends in the spectral variability of NGC 1365 and to investigate the relationship between X-ray flux and the observed X-ray spectrum. This data cover both a
+%significantly longer time period and a far greater flux range than previous studies. Whilst {\it SWIFT} does not possess the same spectral resolution as instruments used
+%in other studies, this greater degree of coverage has allowed the overarching changes in the spectrum of NGC 1365 over long time periods and at a large range of fluxes
+%to be characterised, a task which previous data sets would not allow.
+
+Although there have been many previous spectral studies of NGC 1365, these studies have all concentrated either on detailed analysis of a single epoch spectrum or on
+analysis of a small number of spectra taken over a relatively short timescale (hours or days). By contrast, here we study 190 SWIFT spectra taken over a period of six
+years. Whilst {\it SWIFT} does not provide spectral resolution as high as that used in most previous short-time spectral studies, e.g. with {\it XMM-Newton} or {\it
+Suzaku}, the {\it SWIFT} data cover a much longer time period and a far greater flux range. The {\it SWIFT} data therefore allow a proper investigation of flux-related
+spectral variability and of long term spectral variations, over a much larger dynamic range than in previous studies.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Observations \& Data Reduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The observations were performed using the {\it SWIFT} XRT in `photon counting mode', between 21 July 2006 and 17 March 2013. A total of 293 spectra from individual {\it
+SWIFT} `visits', or exposures, were taken over more than $220$ kiloseconds of exposure time. Individual exposure times ranged from $<10$ seconds to $>1900$ seconds. Data
+were mostly confined to three main time periods, shown in Table \ref{obstable}. More intensive monitoring took place between MJD 56220 - 56330, due to a supernova which
+went off in NGC 1365 during this period (but which was neither bright enough nor close enough to the nucleus to affect the data used in this study). Of the 293 spectra,
+103 were rejected due either to very low total counts in the exposure or artifacts near the source, leaving 190 usable spectra, consisting of $\sim 164$
+ kiloseconds of exposure time. The raw data for all Swift XRT observations of NGC 1365 were downloaded from the HEASARC
+archive\footnotetext[1]{http://heasarc.gsfc.nasa.gov/cgi-bin/W3Browse/swift.pl}.
+
+The XRT data were reduced using version 0.12.4 of the standard {\it Swift} XRTPIPELINE software. The XSELECT tool was used to extract spectra and lightcurves
+using the optimal source and background regions for each visit. The sensitivity of the XRT is not uniform over the field of view, due to vignetting and the presence of
+bad pixels and columns on the CCD; the {\it Swift} XRTEXPOMAP and XRTMKARF tools were therefore used to generate an exposure map (including vignetting and bad pixels) and
+an ancillary response file (ARF) for each visit, in order to correct for these effects. The relevant redistribution matrix file (RMF) was also taken from the {\it Swift}
+calibration database. The X-ray background was estimated and subtracted from the instrumental count rates, using the area-scaled count rate measured in the
+background annulus region. The observed XRT count rates were carefully corrected for the fraction of counts lost due to bad pixels and columns, vignetting effects, and
+the finite extraction aperture (including regions excised in order to mitigate pileup effects).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Fig. \ref{lc} shows a $0.5 - 10.0$ keV lightcurve of all of the data over the six-year period of observation. The large flux range is readily apparent on a range of
+timescales.
+
+\begin{table}
+ 	\centering
+	%\footnotesize
+	\begin{tabular}{| l | c | c | c | c |} \hline
+		
+	OBSIDs 							& MJD range 		& $N_{obs}$ 	& $N_{visits}$ 	& $T_{tot}$ (ks) 	\\ \hline \hline	
+	
+
+	00035458001-02						& 53937.0-53939.7	& 2		& 30		& 19402		\\ \hline
+	00090101001-09						& 54964.0-55117.4	& 8		& 64 		& 46919		\\ \hline
+	\multirow{3}{2.1cm}{00035458003, 00080317001, 00032614001-71} 	& 	&  		&  		& 		\\ 
+								& 56134.1-56368.4	& 41		& 89		& 71640		\\
+								&			&		&		&		\\ \hline
+	
+	Total							& 53937.0-55117.4	& 51		& 183		& 137961	\\ \hline
+
+	\end{tabular}
+		
+	\caption{Summary of {\it Swift} observations used in this work. $T_{tot}$, $N_{visits}$ and $T_{tot}$  are the values remaining after unusable data has been
+excluded.}
+	\label{obstable}
+
+\end{table}
+
+
+\begin{figure*}
+	\includegraphics[width = 10cm,height = 6cm,clip = true, trim = 0 0 0 0]{brokenlcwidemag.eps}
+	\includegraphics[width = 7cm,height = 6cm,clip = true, trim = 0 0 0 0]{magplot.eps}
+	\caption{{\it left:} The SWIFT X-ray lightcurve of NGC 1365, with a broken axis where data were not taken. {\it right:} The highlighted section of the light
+curve, during which more intensive {\it SWIFT} monitoring was taking place, expanded.}
+	\label{lc}
+\end{figure*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Data Analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%====================================================================================================================================================================
+\subsection{Spectral Hardness}
+%====================================================================================================================================================================
+
+Plots of the hardness ratio against the hard count rate, and the hard count rate against the soft count rate are shown in Figs. \ref{hardness} and \ref{counts}
+respectively. Whereas most previous measurements of the photon index, $\Gamma$, concentrate on the $2.0-10.0$ keV energy band, here we look at spectral shape across a
+broader range of $0.5-10.0$ keV; as lower energies are more sensitive to absorption, this allows a more complete look at spectral changes due to absorbing material. In
+each case, hard emission is defined as $2.0 - 10.0$ keV and soft emission as $0.5-2.0$ keV. The hardness ratio is defined as: 
+
+\begin{equation*}
+Hardness Ratio = \frac{Hard\;Counts - Soft\;Counts}{Hard\;Counts + Soft\;Counts}
+\end{equation*}
+ 
+ The plots show the spectrum to be extremely soft at very low fluxes, but to become hard very rapidly with with increasing flux. Beyond this sharp rise, still at
+relatively low flux, the hardness decreases again more gradually with increasing flux, as often seen in Seyfert galaxies within the $2.0-10.0$ keV band (e.g.
+\citet{sobolewska}, \citet{lamer}). The data display a relatively small amount of scatter about this general trend; for this reason, the shape of the spectrum can be
+assumed to be approximately similar at a given flux level, independent of time. This implies that the system is behaving in approximately the same manner at each flux
+level, irrespective of what state the system was in at an earlier time, allowing flux-binning of spectra to improve the signal-to-noise ratio.
+
+\begin{figure}
+	\includegraphics[width = \columnwidth,clip = true, trim = 0 0 0 0]{hardnessVhardCounts.eps}
+	\caption{Plot of the hard count rate against hardness ratio of NGC 1365. The scatter around the mean at a given count rate is visibly low. The data are binned
+such that each bin contains a minimum of 5 data points.}
+	\label{hardness}
+\end{figure}
+				
+\begin{figure}
+	\includegraphics[width = \columnwidth,clip = true, trim = 0 0 0 0]{softCountsVhardCounts.eps}
+	\caption{Plot of the ard count rate against soft count rate of NGC 1365. The data are binned such that each bin contains a minimum of 5 data points.}
+	\label{counts}
+\end{figure}
+
+%====================================================================================================================================================================
+\subsection{Spectral Modelling}
+%====================================================================================================================================================================
+
+\begin{table*}
+	\centering
+	\footnotesize
+	\begin{tabular}{| p{5cm}|| >{\centering}p{2.2cm}| >{\centering}p{2.2cm}| >{\centering}p{2.2cm}|| >{\centering}p{1.5cm}| >{\centering}p{0.55cm} | p{0.55cm}|}
+	\hline
+		
+	\multirow{2}{*}{Model}			& \multicolumn{3}{c||}{Parameters}&\multirow{2}{*}{$\Gamma$ Range}& \multirow{2}{*}{$\chi^2_{Red}$}&\multirow{2}{*}{DoF}
+\\
+	\hhline{~---~~~}   
+						& Spectral index& Absorbing column	& Ionisation	& 		& 		& \\ 	   \hline \hline
+	Absorbed and  unabsorbed power laws	& Fixed		& Free 			& Free		& 1.95		& 1.42	 	& 1069 \\  \hline	
+	
+	Absorbed and unabsorbed power laws	& Fixed		& Free 			& Tied 		& 1.95		& 1.42		& 1078 \\  \hline
+	Absorbed and unabsorbed power laws	& Fixed		& Tied			& Free  	& 1.95		& 2.42		& 1078 \\  \hline \hline
+	
+	Absorbed and unabsorbed power laws 	& Tied		& Free			& Free		& 1.39		& 1.17		& 1068 \\  \hline \hline
+
+	Absorbed and unabsorbed power laws 	& Free		& Free			& Free		& 1.20 - 2.06	& 1.10		& 1060 \\  \hline
+	Absorbed and unabsorbed power laws 	& Free		& Free			& Tied		& 1.17 - 2.07	& 1.12		& 1069 \\  \hline
+	Absorbed and unabsorbed power laws 	& Free		& Tied			& Free		& 0.37 - 2.08	& 1.64		& 1069 \\  \hline \hline
+
+	Single, absorbed power	law		& Free		& Free 			& Free		& 0.55 - 1.85	& 1.26		& 1069 \\  \hline	
+	Single, absorbed power	law		& Free		& Free			& Tied 		& 0.34 - 1.92	& 1.75		& 1078 \\  \hline	
+	Single, absorbed power	law		& Free		& Tied			& Free		& 0.0 - 1.87	& 1.76		& 1078 \\  \hline		
+		
+	\end{tabular}
+		
+	\caption{Summary of the main components of each model fitted to the average spectra, showing the parameters which were fixed, tied or left free in each case, and
+the reduced $\chi^2$ value and number of degrees of freedom (DoF) of the best fit with each model.}
+	\label{table}
+\end{table*}
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The 190 spectra were divided into 11 flux bins and combined using the {\it HEADAS} tool `addspec'(see Fig. \ref{spectra} for a sample of these summed spectra). The bins
+were chosen such that each bin had both a minimum of 1500 total counts and a minimum width of 0.025 counts s$^{-1}$; this ensured that each summed spectrum would possess
+a sufficient signal to noise ratio for accurate spectral fitting, and that the flux bins were roughly evenly spaced across the flux range covered by the spectra. Each of
+these summed spectra were then grouped in energy, using the {\it HEADAS} tool `grpspec', such that each group contained a minimum of 15 counts.
+
+A variety of models were fitted to the spectra using the {\it XSPEC} 12.7 analysis package \citep{arnaud}. The models were fitted simultaneously to all 11 summed
+spectra, in order to discover the cause of variations in the shape of the spectrum with changing flux.  It was discovered that a single, unabsorbed power law of index
+$\sim 1.92$ (as found by \citet{risaliti13}), fitted the lowest flux observations very well if combined with a Gaussian at $\sim 0.8$ keV, except for a small excess at
+higher energies ($> \sim 4.0$ keV). With increasing total flux, this excess was seen both to increase in flux relative to the lower energy component and to expand to
+lower energies, such that the single power law model become increasingly inadequate. 
+
+At the highest fluxes, it was found that a single power would fit the data very well if absorbed by a partially ionised absorbing column. This model was, however, still
+insufficient to give a good fit at intermediate fluxes, as these spectra had a comparable flux at both the low- and high-energy ends of the spectra.
+
+Motivated by the steep unabsorbed spectrum, with its high energy excess, found at low fluxes, and the absorbed component found at the higher fluxes, a set of
+two-component models were fitted to the data; these models consisted of two power laws, one of which was unabsorbed and the other absorbed, with the absorbing column and
+ionisation parameter left as either free or tied parameters. These models were found to fit the data well in simultaneous fits of the spectra from all flux ranges.
+
+In these two-component models, the two power laws had the same spectral index, $\Gamma$, fixed at the value found by \citet{risaliti13} using the very wide spectral
+range allowed by {\it NuStar}. It was also possible to obtain good fits at all fluxes using an absorbed, pivoting power law. However, the best fits required a very large
+range of $\Gamma$ (from $\sim 0.55$ to $\sim 1.85$), and a very low value of $\Gamma$ at high fluxes (see Table \ref{table}.
+
+It is not known for certain whether the intrinsic spectral index, $\Gamma$, varies or not during changes in X-ray luminosity. Many groups (e.g. \citet{miller08},
+\citet{turner07},\citet{fabian05}, \citet{pounds04}) assume that there is no change. Observations in the 2-10 keV band generally do show some variation, although the
+changes with luminosity are not large (e.g. \citet{sobolewska}, \citet{zdziarski99}). \citet{sobolewska}, for example, who simply fit a power law to the 2-10 keV spectra,
+find that $\Gamma$ varies as 2.7$\dot m ^{0.08}$ over similar time scales to that of our data; in reality these measurements are, of course, depend on other parameters
+which were not included, such as the reflection component and any absorption. If the variation in the observed spectral index is interpreted in terms of the sum
+of a variable, steep spectrum component and a relatively constant reflection component with a hard spectrum, the intrinsic spectral index can remain constant; in this
+case, when the flux of the variable steep spectrum component is low, the hard spectrum component dominates, causing the observed spectral index to change (e.g.
+\citet{guainazzi99}, \citet{uttley99},\citet{ponti}, \citet{fabian03}). Furhermore, where observations with a large spectral range have been made, allowing good
+definition of the primary continuum slope, the observed variation of $\Gamma$ with luminosity has not been large (e.g. 0.1 in NGC4151, \citet{lubinski10}), 0.2 in
+NGC4507, \citet{braito}).
+
+Theoretical Comptonisation modelling (e.g. \citet{beloborodov99}, \citet{coppi92}) shows that the photon index can depend on the ratio of $L_{diss}$ to $L_s$ (where
+$L_{diss}$ is the power dissipated in the corona during variations and $L_s$ is the input soft photon luminosity) to a low power (-0.1 for AGN). Unless there are very
+large variations in these parameters the intrinsic spectral index should therefore not change by more than a few tenths. Thus, although it is possible that a small change
+in spectral index may occur during the flux range sampled by our observations, the large changes in $\Gamma$ required by the pivoting power law models are assumed to
+be unlikely. Our first order approximation of no change in spectral index is likely to be a reasonable approximation. 
+
+
+In each model, the absorbed power law used the ‘Absori’ model for an ionised photoelectric absorber. The absorber temperature was tied for each fit. A redshift of $5.569
+\times 10^{−3}$ \citep{lavaux} and an iron abundance of 2.8 times solar abundance, as found by \citet{risaliti09}, were used in all fits. An emission line was added to
+all of the models, due to an excess in the residuals of the models before its inclusion, particularly at lower fluxes as the line flux appears to be constant; its
+addition lowered the reduced $\chi^2$ by approximately $0.10$ in the two-component model with a tied ionisation state. The line was fitted with a Gaussian initially fixed
+at $0.8$ keV, with width $0.1$ keV , and whose normalisation was tied; the width and position were then tied but allowed to vary in each model. In the two-component model
+with a tied ionisation state, this gave final values of $E = 0.834$ keV and $\Sigma = 0.100$ keV. The emission line is most likely to be due to an iron L-shell
+transition, whose detection is particularly expected in Seyfert galaxies with a high iron abundance (e.g. \citet{markowitz}, \citet{fabian09}), as appears to be the case
+for NGC 1365 \citep{risaliti09}; its presence is made still more likely by the previous detection of K-shell transition lines \citep{risaliti05a}. Galactic absorption of
+$1.39 \times 10^{−20}$ $cm^−{2}$ was also included \citep{dickey90}. The effects of Compton Scattering on the fits were tested by adding the ‘Cabs’ model in {\it XSPEC},
+but were found to be negligible.
+
+The column of the absorbing material, and its ionisation parameter, were also allowed to vary in different ways in different fits. The matrix of different variations of
+the two-component model, together with each goodness of fit, is given in Table \ref{table}.
+
+In all of the two-component fits in which the absorbing column was allowed to vary, the normalisation of the absorbed power law increases, and the absorbing column
+decreases, with increasing total flux. The normalisation of the unabsorbed power law also increases. A representative sub-set of the 10 spectra are shown in Fig.
+\ref{spectra}.
+
+As can be seen from the $\chi^2$ values of each model, leaving the ionisation state to vary, but tying the absorbing column, was found to be insufficient to account for
+the degree of variation observed in the spectra, at any fixed absorbing column, for both a pivoting power law and the two-component model. 
+
+Tying the ionisation state, however, so that it stays constant at all flux levels, whilst leaving the absorbing column free to vary, gives good fits to the data with the
+two-component model. Significantly, the $\chi^2$ value remains the same in this model; this is because the ionisation varies very little in the best fit model even when
+both ionisation state and absorbing column are left free, meaning the fits are very similar. 
+
+Tying the ionisation state in the pivoting single power law model gives a significantly worse fit compared to when both ionisation state and absorbing column are left
+free. This implies that the goodness of the fit in this case is due mainly to the large number of free parameters, as opposed to the accuracy of the model. We therefore
+believe that the model which most accurately describes the data consists of two power laws, one of which is absorbed by material with a constant ionisation state, but
+with a varying absorbing column. Whilst the ionisation state of the absorbing material undoubtedly changes, the data show both that large changes are not required to
+change to give a good fit, and that large changes in the absorbing column are necessary to account for the spectral variation observed regardless. Changes in ionisation
+alone cannot account for these spectral changes observed.
+
+
+
+%====================================================================================================================================================================
+\subsection{Two-Component Spectral Variability}
+%====================================================================================================================================================================
+
+\begin{figure}
+	\includegraphics[width = \columnwidth, angle = 0,trim = 0 0 0 0,clip = true]{binnedSpectra.eps}
+	\caption{A sample of the set of unfolded, summed spectra produced by combining spectra in the same flux range. The spectra are fitted with the best fitting model,
+	consisting of two power laws, one of which is absorbed by a partially ionised absorbing column and one of which is not. Both power laws have a fixed spectral
+index of 1.95, as found by \citet{risaliti13}. The ionisation state of the absorbing material is fixed, but the absorbing column is allowed to vary, producing the
+variation seen between spectra from different flux levels. The data are binned for clarity.}
+	\label{spectra}
+\end{figure} 
+
+ \begin{figure}
+	\includegraphics[width = \columnwidth, angle = 0,trim = 0 0 0 0,clip = true]{modelSpectra+Components.eps}
+	\caption{The sample of best fitting models shown in Fig. \ref{spectra} ({\it solid lines}), together with the components of each model - the unabsorbed power
+	law, absorbed power law and Gaussian ({\it dashed \& dotted lines}).}
+	\label{modelSpectra}
+\end{figure} 
+ 
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Fig. \ref{spectra} shows a sample of the flux-binned spectra fitted with the two-component model described above, which we believe best describes the variability.  Here
+the spectrum is composed of an unabsorbed power law and an absorbed power law. Fig. \ref{modelSpectra} shows how the two power law components vary as the flux changes.
+The plot shows that absorbing column of the absorbed power law decreases as the normalisation of this power law increases, equivalent to the flux before absorption. These
+two parameters are plotted in Fig. \ref{nhplots} and the strong anticorrelation is confirmed. 
+
+In Fig. \ref{normplots} the normalisation of the unabsorbed power law is plotted against that of the absorbed power law. As is apparent by eye, the normalisations can be
+fitted well with a linear model, showing them to be correlated. This implies a causal link between the components, and shows that the flux variations
+are partly due to intrinsic variations of the nuclear source, and not only due to variations in absorption. An F-test shows that a model in which the two
+normalisations pass through the origin is more likely than a model with an offset (F-statistic = 0.00756, 93.26\% confidence), but that an offset cannot be entirely ruled
+out; a residual unabsorbed component when the absorbed flux is zero, would indicate a constant, low luminosity, unabsorbed component, perhaps from large scale starburst
+emission, which would not be resolved in the {\it SWIFT} images.
+
+
+
+
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+\begin{figure}
+	
+	\includegraphics[width = \columnwidth,trim = 0 0 0 0, clip=true]{nHvNorm2G.eps}\hspace{1pt}
+	\caption{Log plot of the normalisation parameter of the absorbed power law 
+		against the absorbing column of the absorbing material in
+		the model described above. The normalisation of the power law is equivalent to the flux
+		of this component before absorption, and therefore the luminosity of the source.}
+	
+	\label{nhplots}
+\end{figure}  
+		
+\begin{figure}
+	
+	\includegraphics[width = \columnwidth,trim = 0 0 10 0, clip=true]{norm2Vnorm1originG.eps}\hspace{1pt}
+	\caption{Plot of the normalisation parameter of the absorbed power law 
+		against the normalisation parameter of the unabsorbed power law in
+		the model described above. These normalisations are equivalent to the unabsorbed flux from
+	        each component; the correlation between them implies the two components come from the same source.}
+	
+	\label{normplots}
+\end{figure}  
+		
+
+
+As a consistency check, the hard and soft count rates from each model fitted to the summed data were plotted over the original data as in Figs. \ref{hardness} and
+\ref{counts}  (Figs. \ref{modelhardness} and \ref{modelcounts}). These plots show that the summed spectra also follow the trends shown by the individual spectra,
+reinforcing the assumption that the spectrum is similar at a given flux level, independent of time.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+\begin{figure}
+
+	\includegraphics[width = \columnwidth,trim = 0 0 0 0, clip=true]{hardnessHard.eps}
+	
+	\caption{Plot of the hardness against the hard count rate of each of the 190 spectra used, together with that of the model described above when fitted to each
+of the 10 summed, flux binned spectra.}
+	\label{modelhardness}
+	
+\end{figure}
+
+\begin{figure}
+
+	\includegraphics[width = \columnwidth,trim = 0 0 0 0, clip=true]{hardSoft.eps}
+	
+	\caption{Plot of the soft count rate plotted against the hard count rate of each of the 190 spectra used, together with that of the model described above when
+fitted to each of the 10 summed, flux binned spectra.}
+	\label{modelcounts}
+	
+\end{figure}
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+A two component spectral model consisting of an unabsorbed scattered component and a more luminous absorbed component has previously been used to describe the single
+epoch spectrum of NGC4945 (Done et al, 1996). Broadly similar two-component spectra are also reported elsewhere (e.g. NGC4507, \citet{braito}). Variations of hardness
+ratio versus count rate similar to those shown here, in Fig. \ref{hardness}, have also been seen in the spectra of X-ray binary systems (Fig.1 in \citet{kuulkers}) from
+RXTE data (2-13 keV). Although	\citet{kuulkers} do not discuss flux-binned spectra as seen in our Fig. \ref{spectra}, they also favour a similar two component model.
+These studies show that a two component model broadly similar to that which we describe here can, not infrequently, be used to parameterise the X-ray spectra of both AGN
+and X-ray binary sources. However, the main contribution of this paper is to show, for the first time, that the complete, and very large, range of spectral variability
+displayed by at least one AGN can be explained by systematic variation of the absorber, with the absorption varying inversely with luminosity. Below we discuss a possible
+model to explain this behaviour. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Discussion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%====================================================================================================================================================================
+\subsection{A Possible Relationship Between Source Flux and Column Density}
+%====================================================================================================================================================================
+	
+
+For the best-fitting two-component model described above, in which the absorbing column is free to vary, but the ionisation state is tied, Fig. \ref{nhplots} shows the
+column of absorbing material to be inversely related to the normalisation parameter of the absorbed power law, i.e. to the flux prior to absorption. As this component
+dominates the unabsorbed luminosity of the source, the absorbing column is inversely proportional to the source luminosity. Whilst one might initially assume any
+reduction in absorption with increasing flux to be due to increased ionisation, we have shown that models involving varying ionisation alone do not fit the data; models
+allowing variation of ionisation and absorbing column simultaneously also require an inverse relationship between the absorbing column and the unabsorbed luminosity and
+do not require the ionisation to vary significantly. Fits to spectra of NGC 4151 by \citet{lubinski10} at different flux levels show a similar reduction in nH with
+increasing flux, implying this relationship is not unique to NGC 1365. A physical mechanism is required to explain this relationship and a possible solution lies in an
+`X-ray wind’ of absorbing material rising from the accretion disc.
+
+%====================================================================================================================================================================
+\subsection{AGN Wind Model}
+%====================================================================================================================================================================
+
+X-ray absorbing outflows are an known to exist observationally and are often attributed to a disc wind \citep{tombesi}. In the AGN wind model proposed by \citet{elvis},
+absorbing material arises from a narrow range of accretion disc radii in a biconical `wind'. Models by \citet{nicastro} show that an x-ray absorbing wind could originate
+from a narrow boundary region between the radiation pressure- and gas pressure-dominated regions of the accretion disc. In this model, a higher accretion rate leads to
+the radii from which the wind arises increasing, due to the temperature of the disc rising. Furthermore, in the \citet{elvis} model an increase in X-ray luminosity causes
+the opening angle between the wind and the disc to decrease, hypothesised as due to the increased radiation pressure. As X-ray luminosity is proportional to accretion
+rate, these two effects, if valid, would occur together in the case where there is an increase in X-ray luminosity.
+
+If the inclination is such that the observer views the X-ray source through an inner part of the wind, an increase in accretion rate would raise the disc temperature and
+move the wind launch radius outwards, such that the observer would now be viewing the source through a smaller volume of the wind and therefor a lower absorbing column.
+A density profile at the inner edge of the wind in which the density decreases towards smaller radii would accentuate this effect. In the Elvis model, the lower column
+of absorbing material would also be more ionised, seen in our fits. The increased accretion rate would lead to an increase in X-ray luminosity, either through increased
+seed photon flux which could be very rapid, or through increased energy deposition in the corona, which would lag the seed photon effect due to the time taken for
+accreting material to reach the corona. An increase in X-ray luminosity would also rapidly increase the opening angle of the wind, thus moving absorbing material out of
+the line of sight.
+
+The above affects will thus naturally lead to the inverse relationship between absorbing column and luminosity, which we see in the spectra of NGC 1365. A lag related to
+one mechanism for variation in X-ray luminosity would lead to hysteresis in part of the relationship, thus some scatter is expected in the relationship. The timescale for
+the propagation of variations in the accretion rate from the expected range of radii from which a wind would emanate (hundreds of gravitational radii) is around a day,
+whilst the wind is expected to respond to variations immediately (\citet{treves},\citet{shakura}, \citet{tombesi}).The sampling of the present Swift data therefore is not
+sufficient to investigate any possible hysteresis effect further. 
+
+In all models, the wind is expected to be clumpy, and so short timescale variations of column, independent of unabsorbed luminosity, should also occur, which would also
+add scatter to the relationship between X-ray luminosity and absorbing column.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+% The link between increasing X-ray luminosity and decreasing absorbing column could occur physically through more than one mechanism. An increase in accretion rate
+% through the disc would raise the local disc temperature, causing the inner and outer launch radii of the wind to move further out, thereby reducing the obscuration
+% of the central source. The increased accretion rate would then propagate inwards, towards the X-ray emitting region, putting more energy into the scattering corona and
+% hence increasing the X-ray luminosity. Thus, there would be an inverse relationship between X-ray luminosity and obscuring column. Such a mechanism would, of course, lead
+% to a lag between the change in obscuring column and the change in X-ray luminosity. For typical wind launch radii of a few hundred $R_g$ \citep{higginbottom}, the viscous
+% timescale for perturbations to travel to the X-ray emission region would be of order weeks to months.
+
+% Alternatively, or perhaps additionally, a second possibility is that the increased accretion rate would eventually hit the peak emission region of the disc, increasing
+% the flux of uv photons. These photons would push on the wind via the powerful line driving mechanism \citep{proga99}, bending it further out of the line
+% of sight to the central source. Furthermore, the increased uv flux would push out the region within which any material rising up from the disc would be fully
+% ionised. This material would then only be susceptible to Compton scattering, as the much more powerful line driving mechanism would no longer be applicable, meaning this
+% material would never be driven off as a wind. Thus, this mechanism would also drive the inner launch radius of the wind outwards. The increased uv flux, which provides
+% the bulk of the seed photons for the X-ray emission, would then lead to increased X-ray emission, again causing a correlation between X-ray luminosity and absorbing
+% column. Any time difference between the increased X-ray emission and the decrease in absorbing column would then be the difference between the light travel times
+% from the uv emission region to the X-ray emission region and to the wind. This difference is likely to be small (tens of minutes).
+
+% As a third possibility, the incoming perturbations in accretion rate, which have raised the uv flux and thereby pushed out the wind launch radii, will then travel further
+% inwards to the X-ray emission region, enhancing the X-ray luminosity. In this case, the rise in X-ray luminosity will lag the decrease in obscuration by the viscous
+% travel time from the uv to X-ray emission regions, i.e. of order days.
+
+% In all cases, the timescale over which the structure of the wind react to changes in it's launch radius, and how quickly the observed spectrum will change as a result, is
+% also important; it is, however, largely unknown, as it is dependant on the geometry of the wind and the outflow velocity in each part of the wind. This timescale would
+% need to be small enough to account for the absence of a lag between X-ray brightness fluctuations and absorbing column variations.
+% 
+% Our observations do not show a great deal of scatter in the hardness-count rate diagram, indicating that the total lag is short, which would favour the second mechanism
+% discussed above, although it is likely that each of these mechanisms contribute to some extent. Whatever mechanism is responsible, it is clear that a change in
+% the wind structure is necessary to explain the spectral variations observed.
+
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The link between increasing X-ray luminosity and decreasing absorbing column could occur physically through more than one mechanism. An increase in accretion rate through
+the disc would raise the local disc temperature, causing the inner and outer launch radii of the wind to move further out, thereby reducing the obscuration of the central
+source. The increased accretion rate would then propagate inwards, towards the X-ray emitting region, putting more energy into the scattering corona and hence increasing
+the X-ray luminosity. Thus, there would be an inverse relationship between X-ray luminosity and obscuring column. Such a mechanism would, of course, lead to a lag between
+the change in obscuring column and the change in X-ray luminosity. For typical wind launch radii of a few hundred $R_g$ \citep{higginbottom}, the viscous timescale for
+perturbations to travel to the X-ray emission region would be of order weeks to months. 
+
+Alternatively, or perhaps additionally, a second possibility is that the increased accretion rate would eventually hit the peak emission region of the disc, increasing
+the flux of uv photons. These photons would push on the wind via the powerful line driving mechanism \citep{proga99}, bending it further out of the line of sight to the
+central source. Furthermore, the increased uv flux would push out the region within which any material rising up from the disc would be fully ionised. This material would
+then only be susceptible to Compton scattering, as the much more powerful line driving mechanism would no longer be applicable, meaning this material would never be
+driven off as a wind. Thus, this mechanism would also drive the inner launch radius of the wind outwards. The increased uv flux, which provides the bulk of the seed
+photons for the X-ray emission, would then lead to increased X-ray emission, again causing a correlation between X-ray luminosity and absorbing column. Any time
+difference between the increased X-ray emission and the decrease in absorbing column would then be the difference between the light travel times from the uv emission
+region to the X-ray emission region and to the wind. This difference is likely to be small (tens of minutes). 
+
+As a third possibility, the incoming perturbations in accretion rate, which have raised the uv flux and thereby pushed out the wind launch radii, will then travel further
+inwards to the X-ray emission region, enhancing the X-ray luminosity. In this case, the rise in X-ray luminosity will lag the decrease in obscuration by the viscous
+travel time from the uv to X-ray emission regions, i.e. of order days.
+
+
+% **Hi Sam, not wishing to stifle creative writing, but I don't
+% understand the pargraph below. I don't think it adds anything above
+% what we say in the final paragraph....cheers, Ian
+% 
+% In all cases, the timescale over which the structure of the wind reacts to changes in its launch radius, and how quickly the observed spectrum will change as a result, is
+% also important; it is, however, largely unknown, as it is dependant on the geometry of the wind and the outflow velocity in each part of the wind. This timescale would
+% need to be small enough to account for the absence of a lag between X-ray brightness fluctuations and absorbing column variations.**
+
+Our observations do not show a great deal of scatter in the hardness-count rate diagram, indicating that the total lag is short, which would favour the second mechanism
+discussed above, although it is likely that each of these mechanisms contribute to some extent. Whatever mechanism is responsible, it is clear that a change
+in the wind structure is necessary to explain the spectral variations observed.
+
+
+% The timescale of any turbulence in the wind, as found in some simulations (e.g. \citet{proga04}), but this is likely to be tens of days.
+
+%--------------------------------------------------------------------------------------------
+
+%If one considers this possibility in the
+%context of the wind model described above, it is apparent that a change in the X-ray luminosity of the nucleus would cause a change in the absorbing
+%column through which the source is observed for some viewing angles, leading to variations in both flux and spectral shape. If the observer is viewing the X-ray source
+%through an inner part of the X-ray-absorbing wind, an increase in X-ray luminosity would lead to a decrease in the absorbing column of the section of the wind through
+%which the source is being observed. The outward movement of the wind would mean that the portion of the wind obscuring the source is closer to the inner edge of the
+%bicone, meaning it is lower density, whilst the decrease in the opening angle of the wind would lead to a smaller fraction of the wind being between the observer and the
+%source. The two effects would both act to reduce the absorbing column between the source and the observer. This scenario would lead to a negative correlation between the
+%absorbing column of absorbing material and the X-ray luminosity of the nucleus, as found in our spectral fits. The reflected component seen in our spectra could, in this
+%case, correspond to a component of the X-ray emission scattered from the inner edge of the disc wind.
+
+
+
+%It is likely that this scenario would lead to hysteresis effects, but it is unclear what these effects would be. An increased accretion rate would cause changes in the
+%temperature of the accretion disc before increasing the X-ray flux, as the accreting matter is required to reach the central source before producing X-rays. The
+%timescale
+%of any changes in the wind's structure would, however, also affect any delay between changes in the absorbing column and X-ray flux, meaning the nature of such a delay
+%is not trivial to calculate. The {\it SWIFT} data we have is not of sufficient quality to check for any hysteresis, so these possibilities have not yet been tested. 
+
+%---------------------------------------------------------------------------------------------------
+
+%[[Not sure if we want to say the bit below, or whether we can already
+%    rule it in or out with presently published data... !!!]]
+    
+A prediction of our model is that, if the inclination is very high, then varying the launch radius would not greatly alter the column through which the source was
+viewed. High inclinations, in the wind model, correspond to the highest absorbing columns. Thus we expect that, if the average absorbing column is very high, we do not
+expect a systematic inverse relationship between unabsorbed luminosity and absorbing column. The major absorption variations would then result just from the clumpiness of
+the wind.
+
+%====================================================================================================================================================================
+\section{Conclusions}
+%====================================================================================================================================================================
+
+SWIFT X-ray observations of NGC 1365 over a period of 6 years show a large amount of spectral variability. These variations are best explained by a two-component model
+consisting of an unabsorbed power law and a more luminous absorbed power law; for both components, the spectral index was fixed. The normalisations of the two power laws
+vary together. The absorbing column of the absorbed power law varies inversely with its luminosity, an effect which is not simply due to increased ionisation. This effect
+can be simply explained by viewing through the edge of a wind whose launch radius varies inversely with increasing accretion rate. The unabsorbed power law can be
+explained, as in the standard Elvis wind model, as the scattered component from the far side of the wind.
+
+
+%The SWIFT spectra of NGC 1365 show a large amount of variability, the cause of which
+%is found to be likely due mostly to changes in the absorbing column of absorbing material.
+%Furthermore, the absorbing column appears to decrease with increasing X-ray flux. This
+%effect is suggested to be due to the changing position and opening angle of a
+%disc wind and the resultant variation in obscuration of the source to an observer
+%viewing the source through the edge of the X-ray absorbing component of the wind.
+
+%====================================================================================================================================================================
+\section*{Acknowledgments}
+%====================================================================================================================================================================
+
+Thanks to the STFC, SWIFT, other money etc. We thank Christian Knigge and James Matthews for useful discussions.
+
+
+%====================================================================================================================================================================
+
+\begin{thebibliography}{99}
+
+    \bibitem[\protect\citeauthoryear{Arnaud}{1996}]{arnaud}  Arnaud, K.A., 1996, Astronomical Data Analysis Software and Systems V, 101, 17.
+
+    \bibitem[\protect\citeauthoryear{Braito et al.}{2012}]{braito} Braito, V., Ballo, L., Reeves, J. N., Risaliti, G., Ptak, A., Turner, T. J., 2012, MNRAS, 428, 2516.
+    \bibitem[\protect\citeauthoryear{Beloborodov}{1999}]{beloborodov99} Beloborodov, A., 1999, ASPC, 161, 295.
+    \bibitem[\protect\citeauthoryear{Brenneman et al.}{2013}]{brenneman} Brenneman, L.W., Risaliti, G., Elvis, M., Nardini, E., 2013 MNRAS, 429, 2662.
+
+    \bibitem[\protect\citeauthoryear{Coppi}{1992}]{coppi92} Coppi, S., 1992, MNRAS, 258, 657.
+    
+    \bibitem[\protect\citeauthoryear{Dickey \& Lockman}{1990}]{dickey90} Dickey, J. M., Lockman, F. J., 1990, ARAA, 28, 215.
+    \bibitem[\protect\citeauthoryear{Done et al.}{1996}]{done} Done, C., Madejski, G.M., Smith, D.A., 1996, ApJ, 463, 63.
+    
+    \bibitem[\protect\citeauthoryear{Elvis}{2000}]{elvis} Elvis, M., 2000, ApJ, 545, 63.
+    \bibitem[\protect\citeauthoryear{Elvis et al.}{2004}]{elvis04} Elvis, M., Risaliti, G., Nicastro, F., Miller, J. M., Fiore, F., Puccetti, S., 2004, ApJ, 615, 25.
+    
+    \bibitem[\protect\citeauthoryear{Fabian et al.}{2003}]{fabian03} Fabian, A.C., Vaughan, S., 2003, MNRAS, 340, 28.
+    \bibitem[\protect\citeauthoryear{Fabian et al.}{2005}]{fabian05} Fabian, A.C., Miniutti, G., Iwasawa, K., Ross, R. R., 2005, MNRAS, 361, 795.
+    \bibitem[\protect\citeauthoryear{Fabian et al.}{2009}]{fabian09} Fabian, A.C., Zoghbi, A., Ross, R. R., Uttley, P., Gallo, L. C., Brandt, W. N., Blustin, A. J.,
+Boller, T., Caballero-Garcia, M. D., Larsson, J., Miller, J. M., Miniutti, G., Ponti, G., Reis, R. C., Reynolds, C. S., Tanaka, Y., Young, A. J., 2009, Nature, 459,
+540.
+    
+    \bibitem[\protect\citeauthoryear{Guainazzi \& Antonelli}{1999}]{guainazzi99} Guainazzi, M., Antonelli, L. A., 1999, MNRAS, 304, 15.
+
+    \bibitem[\protect\citeauthoryear{Higginbottom et al.}{2013}]{higginbottom} Higginbottom, N., Knigge, C., Long, K. S., Sim, S. A., Matthews, J. H., 2013, MNRAS,
+advanced  access: arXiv:1308.5973.
+    
+    \bibitem[\protect\citeauthoryear{Iyomoyo et al.}{1997}]{iyomoyo} Iyomoyo, N., Makishima, K, Fukazawa, Y., Tashiro, M. Ishisaki, Y., 1997, PASJ, 49, 425.
+    
+    \bibitem[\protect\citeauthoryear{Kuulkers et al.}{1998}]{kuulkers} Kulkers, E., Wijnands, R., Belloni, T., Mendez, M., van Der Klis, M., van Paradijs, J., ApJ, 494,
+753.
+    
+    \bibitem[\protect\citeauthoryear{Lamer et al.}{2003}]{lamer} Lamer, G., McHardy, I.M., Uttley, P., Jahoda, K., 2003, MNRAS, 338, 323.
+    \bibitem[\protect\citeauthoryear{Lavaux \& Hudson}{2011}]{lavaux} Lavaux, G., Hudson, M.J., 2011, MNRAS, 416, 2840.
+    \bibitem[\protect\citeauthoryear{Lubi\'{n}ski et al.}{2010}]{lubinski10} Lubi\'{n}ski, P., Zdziarski, A. A., Walter, R., Paltani, S., Beckmann, V., Soldi, S.,
+Ferrigno, C., Courvoisier, T. J.-L., 2010, MNRAS, 408, 1851.
+
+    \bibitem[\protect\citeauthoryear{Maiolino \& Rieke}{1995}]{maiolino95} Maiolino, R., Rieke, G. H., 1995, ApJ, 454, 95.
+    \bibitem[\protect\citeauthoryear{Matt et al.}{2003}]{matt} Matt, G., Guainazzi, M., Maiolino, R., 2003, MNRAS, 342, 422.
+    \bibitem[\protect\citeauthoryear{Markowitz et al.}{2008}]{markowitz} Markowitz, A., Reeves, J. N., Miniutti, G., Serlemitsos, P., Kunieda, H., Yaqoob, T., Fabian, A.
+C., Fukazawa, Y., Mushotzky, R., Okajima, T., Gallo, L. C., Awaki, H., Griffiths, R. E., 2008, PASJ, 60, 277.
+    \bibitem[\protect\citeauthoryear{Miller, Turner \& Reeves}{2008}]{miller08} Miller, L., Turner, T., Reeves, J., 2008, A\&A, 483, 437.
+    
+    
+    \bibitem[\protect\citeauthoryear{Nicastro}{2000}]{nicastro} Nicastro, F., 2000, ApJ, 530, 65.
+    
+    \bibitem[\protect\citeauthoryear{Papadakis et al.}{2009}]{papadakis} Papadakis, I. E., Sobolewska,  M., Arevalo,  P., Markowitz, A., McHardy, I. M., Miller,  L.,
+Reeves, J. N., 
+    Turner, T.J., 2009, A\&A, 494, 905.
+    \bibitem[\protect\citeauthoryear{Ponti et al.}{2006}]{ponti} Ponti, G., Miniutti, G., Cappi, M., Maraschi, L., Fabian, A. C., Iwasawa, K., 2006, MNRAS, 368, 903.
+    \bibitem[\protect\citeauthoryear{Pounds et al.}{2004}]{pounds04} Pounds, K., Reeves, J., Page, K., O'Brien, P.T., 2004, ApJ, 616, 696.
+    \bibitem[\protect\citeauthoryear{Proga, Stone \& Drew}{1999}]{proga99} Proga, D., Stone, J. M., Drew, J. E., 1999, MNRAS, 310, 476.
+    \bibitem[\protect\citeauthoryear{Puccetti et al.}{2007}]{puccetti} Puccetti, S., Fiore, F., Risaliti, G., Capalbi, M., Elvis, M., Nicastro, F., 2007, MNRAS, 377, 607.
+    
+
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2000}]{risaliti00} Risaliti, G., Maiolino, R., Bassani, L., A\&A, 365, 33.
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2002}]{risaliti02} Risaliti, G., Elvis, M., Nicastro, F., 2002, ApJ, 571, 234.
+    \bibitem[\protect\citeauthoryear{Risaliti}{2007A}]{risaliti07a} Risaliti, G., 2007,ASPC, 373, 458
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2007B}]{risaliti07b} Risaliti, G., Elvis, M., Fabbiano, Baldi, A.,Zezas, A., Salvati, M., 2007, ApJ, 659, 111.
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2009}]{risaliti09} Risaliti, G., Miniutti, G., Evlis, M., Fabbiano, G., Salvati, M., Baldi, A., Braito, V., 
+									 Bianchi, S., Matt, G., Reeves, J., Soria, R., Zezas, A., 2009, ApJ,696,160.     
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2013}]{risaliti13} Risaliti, G., Harrison, F.A., Madsen, K.K., Walton, D.J., Boggs, S.E., Christensen,  F.E., 
+							Craig, W.W., Grefenstette, B.W., Hailey, C.J., Nardini, E., Stern, D., Zhang, W.W., 2013, Nature, 494, 449. 
+
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2005A}]{risaliti05a} Risaliti, G.,Bianchi, S., Matt, G., Baldi, A., Elvis, M., Fabbiano, G., Zezas, A., 2005, ApJ,
+630, 129.
+    \bibitem[\protect\citeauthoryear{Risaliti et al.}{2005B}]{risaliti05b} Risaliti, G., Elvis, M., Fabbiano, G., Baldi, A., Zezas, A., 2005, ApJ, 623, 93.
+    
+    \bibitem[\protect\citeauthoryear{Shakura \& Sunyaev}{1973}]{shakura} Shakura, N. I.,Sunyaev, R. A., A\&A, 24, 337.
+    \bibitem[\protect\citeauthoryear{Sobolewska \& Papadakis}{2009}]{sobolewska} Sobolewska, M. A., Papadakis, I. E., 2009, MNRAS, 399, 1597.
+
+    \bibitem[\protect\citeauthoryear{Tombesi et al.}{2013}]{tombesi} Tombesi, F., Cappi, M., Reeves, J., Nemmen, R.S., Braito, V., Gaspari, M., Reynolds, C. S., 2013,
+MNRAS, 430, 1102.
+    \bibitem[\protect\citeauthoryear{Turner et al.}{2007}]{turner07} Turner, T., Miller, L., Reeves, J. N., Kraemer, S. B., 2007, A\&A, 475, 121.
+    \bibitem[\protect\citeauthoryear{Treves, Maraschi, \& Abramowicz}{1988}]{treves} Treves, A., Maraschi, L., Abramowicz, M., 1988, PASP, 100, 427.
+    
+    \bibitem[\protect\citeauthoryear{Uttley et al.}{1999}]{uttley99} Uttley, P., McHardy, I. M., Papadakis, I. E., Guainazzi, M., Fruscione, A., 1999, MNRAS, 307, 6.
+    \bibitem[\protect\citeauthoryear{Zdiarski, Lubi \& Smith}{1999}]{zdziarski99} Zdziarski, A. A., Lubi, P., Smith, D. A., MNRAS, 303, 11.
+    
+\end{thebibliography}
+
+%\appendix
+
+\label{lastpage}
+
+\end{document}
