@@ -1,0 +1,340 @@
+%/export/xray11/sdc1g08/HDData/Documents/blanklatexfiles/poster/ngc1365
+
+% packages and set-up
+
+\documentclass[final]{beamer}
+\usepackage{grffile}
+\mode<presentation>{\usetheme{I6pd2}}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{multirow}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
+\usepackage{caption}
+\captionsetup{labelformat=empty}
+\usepackage{wrapfig}
+\usepackage{array,booktabs,tabularx}
+\newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
+\newcommand{\pphantom}{\textcolor{ta3aluminium}} % phantom introduces a vertical space 
+						  % in p formatted table columns??!!
+\usepackage{hhline}\fboxrule=4pt%border thickness
+
+\listfiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\graphicspath{{figures/}}
+ 
+\title{ The Long Term X-Ray Spectral Variability of\\ \vspace{1cm}
+  \hspace{0.1cm} NGC1365 with SWIFT \vspace{1cm}}
+  
+\author{Sam Connolly $ ^{\star}$, Ian McHardy}
+\institute{{\small $^{\star}$ Email: sdc1g08@soton.ac.uk}\hspace{370pt}
+	      School of Physics and Astronomy, University of Southampton, UK}
+\date[20th May 2013]{20th May 2013}
+\subtitle{\hspace{18cm}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\columnheight}
+\setlength{\columnheight}{96cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+
+            \begin{block}{\begin{center} Abstract \end{center}} 
+			We present long-term spectral variability in SWIFT data of the Seyfert galaxy NGC1365. 
+			The data cover both a large time period (six years) and a very wide flux range.
+			The spectra have been fitted using a variety of models, in order to 
+			discover the nature of and reasons for the observed variation. It has 
+			been found that variation in the degree of absorption is the most 
+			likely cause of spectral changes. The primary cause of the variation
+			in absorption is found to be most likely due to changes in the
+			column density of the absorbing material; changes in the ionisation state of the
+			absorbing material alone are found to be insufficient to account for the spectral changes observed. 
+			Furthermore, spectral fits seem to show that the degree of absorption decreases with 
+			increasing source flux, implying varying obscuration of the source.
+            \end{block}
+            
+            \vfill
+
+  \begin{columns}
+  
+%================================================================================
+% -------------------- COLUMN 1 -------------------------------------------------
+%================================================================================
+    
+    \begin{column}{.5\textwidth}
+      \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+        \begin{minipage}[T]{.98\textwidth}  % tweaks the width, makes a new \textwidth
+								
+          \parbox[t][\columnheight]{\textwidth}{ 
+
+            % ----------------- BOX 1 -----------------------------------------------
+
+            \begin{block}{1. Introduction}
+            
+			
+ 		The Seyfert galaxy NGC1365 is known to be a highly variable X-ray source [1]. Previous observations have seen large
+ 		changes in the column density of absorbing material, causing significant spectral variation on time scales of weeks to years [2]. 
+ 		In this work, we use six years of SWIFT data to study long term trends in the spectral variability of NGC1365 and to investigate the relationship 
+ 		between X-ray flux and the observed X-ray spectrum.
+		
+            \end{block}
+
+            \vfill
+            
+	    \vspace{-120pt}
+	    
+	    % ----------------- BOX 2 ------------------------------------------
+
+            \begin{block}{2. Spectral Hardness} 
+            
+		\begin{figure}
+			\hspace{-10pt}
+			\fcolorbox{gray}{white}{
+			\includegraphics[width=0.49\linewidth,height=0.4\linewidth,clip = true, trim = 0 0 0 0]{binhardnessvhard.eps}
+			\includegraphics[width=0.49\linewidth,height=0.4\linewidth,clip = true, trim = 0 0 0 0]{binhardvsoft.eps}
+			}
+			\caption{Left: Hard flux (x) against 
+			hardness ratio (y). Right: Hard flux (x) against soft flux. (Data binned)}
+		\end{figure}
+				
+		The hardness ratio shows the spectrum to be extremely soft at low fluxes. 
+		The small amount of scatter implies that the shape of the spectrum can be 
+		assumed to be similar at a given flux level independent of time. This allowed spectra observed 
+		at a similar flux, but in different epochs, to be combined; 52 spectra were 
+		binned according to the X-ray flux at the time of observation and 
+		combined, resulting in a set of spectra representing the spectral shape at each flux level.
+		
+		
+		
+			
+            \end{block}
+
+            \vfill    
+	    \vspace{-120pt}  
+          
+	
+	                
+             % ----------------- BOX 3 ---------------------------------------------------
+
+
+           \begin{block}{3. Spectral Modelling} 
+           
+           %\hspace{-20pt}
+           
+           \begin{wrapfigure}{L}{0.65\textwidth}
+	      \begin{table}[ht!]
+		\label{table:second}
+		\centering
+		\footnotesize
+		\begin{tabular}{| p{7.5cm}|| p{3cm} | p{3cm} | p{5.2cm} || p{1.5cm} | p{1.7cm}  |} \hline
+		
+		
+		
+		\multirow{2}{*}{Model}		   	& \multicolumn{3}{|c||}{Parameters}			&\multirow{2}{*}{$\chi^2_{Red}$}&\multirow{2}{*}{DoF} \\ \hhline{~---~~}   
+							& Fixed		& Tied		& Free			& 		& \\ \hline
+		Absorbed and  			   	& spectral 	& - 		& column density, 	& 1.56 		& 1077 \\ 
+		unabsorbed power laws		    	& index		&		& ionisation		&		&      \\ \hline			  
+		Absorbed and 				& spectral 	& ionisation 	& column density 	& 1.56		& 1087 \\ 
+		unabsorbed power laws			& index		&		&			&		&      \\ \hline
+		Absorbed and 				& spectral	& column  	& ionisation  		& 2.61		& 1087 \\ 
+		unabsorbed power laws			& index		& density	&			&		&      \\ \hline
+		Single, absorbed power					& -		&  		& column density,	& 1.52		& 1077 \\ 
+		law 				&		&		& spectral index,	&		&	\\
+							&	 	& 		& ionisation		&		&      \\ \hline
+		Absorbed and  				& -		& column 	& spectral index, 	& 2.20		& 1077 \\ 
+		unabsorbed power laws			& 		& density	& ionisation		&		&      \\ \hline
+		
+		
+		
+		\end{tabular}
+		
+		\caption{$\chi^2_{Red}$ values and no. of degrees of freedom (DoF) of five models fitted to the average spectra.}
+		
+		\end{table}
+		\end{wrapfigure}
+		
+              	Spectral fits show that the model which best describes the data consists of two power laws, 
+              	one unabsorbed and one undergoing absorption with a varying column density.
+              	In each case, the spectral index was assumed to be constant, at the value found
+              	by Risaliti et. al (2013) [3].
+              	             	
+		
+            \end{block}
+          
+	   
+            
+                    % ----------------- BOX 4 -----------------------------------------------
+
+            \begin{block}{4. Two-Component Spectral Variability}
+            
+		\vspace{-10pt}		
+		\begin{wrapfigure}{L}{0.66\textwidth}
+			\vspace{-10pt}
+			\fcolorbox{gray}{white}{
+			\hspace{-30pt}
+			\includegraphics[width=.65\linewidth,height=.99\linewidth,
+			angle = 270,trim = 30 100 10 70,clip = true]{spectra.eps}\hspace{1pt}}
+			\caption{Sample of the average spectra produced by combining 
+			spectra in the same flux range.}
+			\vspace{-30pt}
+		\end{wrapfigure} 
+		
+		Here we show plots from the best fitting model, described above.
+		In this case, the spectrum is composed of a weakly varying unabsorbed component
+		and a strongly varying absorbed component, whose absorption varies
+		inversely with luminosity. The spectral variability observed cannot
+		be accounted for by changes in ionisation, requiring a change in the
+		amount of absorbing material between the observer and the X-ray source.
+ 		
+		
+            \end{block}
+
+            \vfill
+            
+	    \vspace{-40pt}
+     
+
+
+
+
+		
+
+
+			} % end of parbox!
+
+	% --- end column ---
+
+        \end{minipage}
+      \end{beamercolorbox}
+    \end{column}
+
+%================================================================================
+% ----------- RIGHT COLUMN ------------------------------------------------------
+%================================================================================
+
+
+    \begin{column}{.5\textwidth}
+      \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+        \begin{minipage}[T]{.97\textwidth} % tweaks the width, makes a new \textwidth
+          \parbox[t][\columnheight]{\textwidth}{
+
+          \vspace{20pt}
+
+          
+ 
+         %---- Box 5 ------------------------------------------------
+
+	 \vspace{-20pt}
+	    
+         \begin{block}{5. A Possible Link Between Source Flux and Column Density} 
+	
+		The best-fitting model requires the normalisations of the power
+              	laws to vary; these are approximately correlated, as would be 
+              	expected if the emission were from the same source. In this case,
+              	the two components could correspond to direct, absorbed emission
+              	and unabsorbed emission which is direct and/or scattered. 
+	
+		\begin{figure}
+			\fcolorbox{gray}{white}{
+			\includegraphics[width=0.47\linewidth,height=0.43\linewidth,trim = 20 0 50 0, clip=true]{nHvNorm2.eps}\hspace{1pt}
+			\includegraphics[width=0.47\linewidth,height=0.43\linewidth,trim = 20 0 10 0, clip=true]{norm2Vnorm1.eps}\hspace{1pt}
+			}
+			\caption{The normalisation parameter of the absorbed power law 
+				(x) against the column density of the absorbing material (y) in
+				the model described above.}
+		\end{figure}  
+				
+		A possible link between the normalisation of the absorbed power law and the column density of the aborbing matter
+		is revealed by plotting thise two paramaters, showing a decreasing column density with increasing source flux.
+		
+		
+		
+		\vspace{20pt} As models involving varying ionisation do not fit the data well, it seems that
+		there is an actual change in the amount of material between the observer and the source.
+		In the AGN wind model proposed by Elvis (2000) [4], absorbing material arises from a narrow
+		range of disc radii. A higher accretion rate in this model leads to both a higher disk temperature and a greater
+		X-ray luminosity, causing the wind to arise at larger radii. It is possible that this
+		could lead to less obscuration of the X-ray source, giving a physical mechanism for the oberved decrease in column
+		density with increased flux.
+
+        \end{block}            
+
+	        
+	  \vspace{30pt}  
+         
+         
+         
+	 %---- Box 6 ------------------------------------------------
+	
+         \vspace{10pt}
+
+         \begin{block}{6. Modelling Hardness Variation with Flux}   
+            
+		\begin{figure}
+			\fcolorbox{gray}{white}{
+			\includegraphics[height=0.3\linewidth,width=0.97\linewidth,trim = 0 0 0 0, clip=true]{hardnessModelling.eps}
+			}
+			\caption{Top: A sample of many simulated spectra with a
+				varying absorbing column density. Middle: The 
+				corresponding hard flux (x) against hardness (y) plot. 
+				Bottom: The corresponding hard flux (x) against soft 
+				flux (y) plot.}
+  			\end{figure}
+  				
+		Artifical spectra, created using each model,
+		show that the hardness ratios seen in the data can only be accurately
+		reproduced by the model described above. 
+				
+         \end{block}  
+          
+         \vspace{40pt}   
+
+
+	%---- Box 7 ------------------------------------------------      
+
+	\begin{block}{7. Conclusions}
+				
+		The SWIFT spectra of NGC1365 show large variation, the cause of which
+		is found to be changes in the column density of absorbing material.
+		Furthermore, the column density appears to decrease with increasing X-ray flux. 
+		
+		
+	\end{block}
+
+         \vspace{40pt} 
+        %References
+
+		  \textcolor{yellow}{\tiny{\vspace{-20pt} References: (1) Risaliti, G., Miniutti, G., Evlis, M., Fabbiano, G., Salvati, M., Baldi, A., Braito, V., 
+		  Bianchi, S., Matt, G., Reeves, J., Soria, R., Zezas, A., \\ \vspace{-20pt} 2009, ApJ,696,160. (2) Brenneman, L.W., Risaliti, G., Evlis, M., Nardini, E., 2013 MNRAS, 
+		  429, 2662.  (3) Risaliti, G., Harrison, F.A., Madsen, K.K., Walton, D.J.,\\ \vspace{-20pt} Boggs, S.E., Christensen,  F.E., Craig, W.W., Grefenstette, B.W., 
+		  Hailey, C.J., Nardini, E., Stern, D., Zhang, W.W., 1013, Nature, 494, 449. (4) Elvis, M., 2000, \\ \vspace{-20pt} ApJ, 545, 63.}}
+		 
+		  \vfill		
+
+      
+	} % end of par box!  
+
+          
+
+    % ---------------------------------------------------------%
+    % end the column
+
+        \end{minipage}
+      \end{beamercolorbox}
+    \end{column}
+    % ---------------------------------------------------------%
+
+    % end the columns
+  \end{columns}
+
+\end{frame}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

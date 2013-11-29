@@ -1,0 +1,164 @@
+
+%
+\documentclass[letters,useAMS,usenatbib]{samnote}
+\usepackage{graphicx}
+%\usepackage{fixltx2e}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[The Normalisation of AGN Power Spectra]{The Normalisation of AGN Power Spectra}
+
+\author[S. D. Connolly]{S. D. Connolly}
+
+\begin{document}
+
+\maketitle
+
+\label{firstpage}
+
+
+
+\section{Introduction}
+
+The power spectrum of an AGN can be obtained from a discrete set of flux measurements at given times, i.e. a light curve, using the method originally proposed by \citet{deeming}. The light curve is binned into $2^m$ bins, where m is any integer, and Fourier transformed over a frequency range of $\nu_j = \displaystyle\frac{j}{T}$ where $j = 1,2,... ,2^{m-1}$. The amplitude at a given frequency of the discrete Fourier transform of a light curve is given by: 
+
+\vspace{\baselineskip}
+$P(\nu)= \sum\limits_{i=1}^N a_0 |F_N(\nu)|^2 $\\
+\vspace{\baselineskip}
+
+\setlength\parindent{0pt}
+Where $a_0$ is the normalisation factor and $|F_N(\nu)|$ at frequency `$\nu$' is given by:
+
+\vspace{\baselineskip}
+\setlength\parindent{20pt}
+$|F_N(\nu)|^2 =  |\sum\limits_{j=1}^N f(t_j) e^{i 2 \pi \nu t_j}|^2
+=(\sum\limits_{j=1}^N f(t_j) cos(2 \pi \nu t_j)^2 + 
+(\sum\limits_{j=1}^N f(t_j) sin(2 \pi \nu t_j))^2$\\
+\vspace{\baselineskip}
+
+\setlength\parindent{0pt}
+Where $f(t_j)$ is the flux at time $t_j$ in the light curve, and N is the number of points in the light curve \citep{summons}.\\
+
+If no normalisation is applied to this Fourier spectrum (i.e. $a_0 = 1$), the area of a peak corresponds to amplitude of the power at that frequency. Using a normalisation of $a_0 = 1/T$, where `$T$' is the total time range of the light curve, leads to the size of a peak corresponding to amplitude of the power at that frequency. Using a normalisation of $a_0 = 1/N^2$, where `$N$' is the number of data points in the light curve, ensures that the zero-frequency amplitude of the spectral window is equal to 1 \citep{deeming}.   
+  
+\setlength\parindent{20pt}
+There are, however, further factors that can be introduced with varying advantages, dependant on the purpose for which the Fourier transform is being carried out. The most common normalisations in use are: \\
+\begin{itemize}
+\setlength{\itemindent}{0em}
+
+\item The Leahy normalisation, for which $a_0 = 2/N_{\alpha}$\citep{leahy}.
+\\ 
+\item The `absolute variance' normalisation, for which $a_0 = 2T/N^2$. 
+\\
+\item The `fractional route mean square normalisation', for which $a_0 = 2T/N^2\mu^2$ \citep{vanderklis}.
+
+\end{itemize}
+
+\setlength\parindent{0pt}
+Each of these normalisations is explained individually below.
+
+
+\section{The Leahy Normalisation}
+
+The amplitude of a the power of a given frequency under the Leahy normalisation is given by:
+
+\vspace{\baselineskip}
+\setlength\parindent{20pt}
+$P(\nu)= \sum\limits_{i=1}^N \displaystyle\frac{2}{N_{\alpha}} |F_N(\nu)|^2$\\
+\vspace{\baselineskip}
+
+\setlength\parindent{0pt}
+Where $N_{\alpha}$ is the total number of photons collected, i.e. the total number of counts from all data points. With this normalisation, the power is dimensionless. The main advantage of this normalisation is that it leads to a power spectrum which, as $N_{\alpha}$ tends to infinity, possesses a mean Poisson noise level of 2, a variance of 4 and a $\chi^2$ distribution with 2 degrees of freedom \citep{leahy}.
+
+\setlength\parindent{20pt}
+This property makes the Leahy normalisation particularly useful when searching for periodic signals in white-noise, as they are easier to discern from the known Poisson noise level. As AGN are red-noise dominated, however, any periodicities must additionally be disentangled from this extra, non-constant noise component, meaning that this advantage is largely lost \citep{vaughan}.
+
+\section{The `Absolute Variance' Normalisation}
+
+The amplitude of a the power of a given frequency under the `absolute variance' normalisation is given by:
+
+\vspace{\baselineskip}
+\setlength\parindent{20pt}
+$P(\nu)=\sum\limits_{i=1}^N \displaystyle\frac{2T}{N^2} |F_N(\nu)|^2$
+\vspace{\baselineskip}
+
+\setlength\parindent{0pt}
+Where `$N$' is the total number of data points in the lightcurve and `$T$' is the total time range. The power in this case is in units of counts $s^{-1} Hz^{-1}$ or $RMS^2 Hz^{-1}$. The integration of a power spectrum produced with this normalisation is equal to the absolute variance of the light curve in absolute units ($\sigma^2$):
+
+\vspace{\baselineskip}
+\setlength\parindent{20pt}
+$\displaystyle\int_{\nu_{min}}^{\nu_{Nyquist}} P(\nu) dv =\sigma^2 $
+\vspace{\baselineskip}
+
+\setlength\parindent{0pt}
+The factor of 2 is included to account for the fact that the integration is carried out over only the positive frequencies in the power spectrum. 
+
+\setlength\parindent{20pt}
+The disadvantage of this normalisation is that the power at each frequency is flux dependant, preventing comparison of power spectrum normalised in this way whose average fluxes are not equal.
+
+\section{The `Fractional Route Mean Square' Normalisation}
+
+The most commonly used normalisation when creating power spectrum from AGN light curves is the `fractional route mean square' normalisation, for which the amplitude of a the power of a given frequency under the `absolute variance' normalisation is given by:
+
+\vspace{\baselineskip}
+\setlength\parindent{20pt}
+$P(\nu)=\sum\limits_{i=1}^N \displaystyle\frac{2T}{N^2 \mu^2} |F_N(\nu)|^2$
+\vspace{\baselineskip}
+
+\setlength\parindent{0pt}
+Where `$\mu$' is the average count rate of the light curve and, `$T$', `$N$' and the reason for the presence of the factor of 2 are as described above. The addition of the `$\mu^2$' term normalises the power in terms of the light curve's count rate, allowing direct comparison between systems with different fluxes. The power in this case is in units of $(RMS^2 / \mu^2) Hz^{-1}$, equivalent simply to $Hz^{-1}$. The integral of a power spectrum produced with this normalisation gives the fractional variance of the light curve ($\sigma^2/\mu^2$) \citep{vanderklis}:
+
+\vspace{\baselineskip}
+\setlength\parindent{20pt}
+$\displaystyle\int_{\nu_{min}}^{\nu_{Nyquist}} P(\nu) dv = \displaystyle\frac{\sigma^2}{\mu^2}$
+\vspace{\baselineskip}
+
+\setlength\parindent{0pt}
+The Poisson noise level under this normalisation is approximately constant over all frequencies and is, in the absence of distortions from the detector or elsewhere, given by:
+
+\vspace{\baselineskip}
+\setlength\parindent{20pt}
+$ P_{noise} = \displaystyle\frac{2 ( \overline{N_{\alpha, S}} 
++ \overline{N_{\alpha, B}} ) }{\overline{N_{\alpha, S}^2}} $
+\vspace{\baselineskip}
+
+\setlength\parindent{0pt}
+Where $\overline{N_{\alpha, S}}$ and $\overline{N_{\alpha, B}}$ are the average source and background count rates respectively. The factor of 2 is again included to account for the fact that the integration is carried out over only the positive frequencies in the power spectrum.
+
+\setlength\parindent{20pt}
+If the effects of aliasing in a binned light curve are included, this expression becomes:
+
+\vspace{\baselineskip}
+$ P_{noise} = \displaystyle\frac{2 T ( \overline{N_{\alpha, S}} 
++ \overline{N_{\alpha, B}} ) }{N \Delta T_{bin} \overline{N_{\alpha, S}^2}} $
+\vspace{\baselineskip}
+
+\setlength\parindent{0pt}
+Where `$\Delta T_{bin}$' is the width of the time bins applied to the original light curve. The Poisson noise level can therefore be determined for a given source \citep{summons}.
+
+\section{Conclusions}
+
+Considering the advantages and disadvantages of each normalisation method in relation to the properties of AGN power spectra, it seems clear that the `Fractional Route Mean Square' normalisation is likely to be the best choice in almost all cases.
+
+\begin{thebibliography}{99}
+
+\bibitem[\protect\citeauthoryear{Deeming}{1975}]{deeming} Deeming, T.J., 1975, Ap\&SS, 36, 1.
+
+\bibitem[\protect\citeauthoryear{Leahy}{1983}]{leahy} Leahy, M., 1983, ApJ, 226, 160.
+
+\bibitem[\protect\citeauthoryear{Summons}{2007}]{summons} Summons, D.P., 2007, `X-Ray Power Spectral Densities of Active Galactic Nuclei', PhD Thesis, University of Southampton, Southampton, UK.
+
+\bibitem[\protect\citeauthoryear{Uttley}{2000}]{uttley} Uttley, P., 2000, `Timing Studies of Seyfert Galaxies with the Rossi X-Ray Timing Explorer', PhD Thesis, University of Southampton, Southampton, UK.
+
+\bibitem[\protect\citeauthoryear{Van der Klis}{1997}]{vanderklis} Van der Klis, M., 1997, scma, 321.
+
+
+\bibitem[\protect\citeauthoryear{Vaughan}{2005}]{vaughan} Vaughan, S., 2005, A\&A, 431, 391
+
+\end{thebibliography}
+
+%\appendix
+
+\label{lastpage}
+
+\end{document}

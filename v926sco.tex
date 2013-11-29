@@ -1,0 +1,551 @@
+%                                                                 aa.dem
+% AA vers. 8.2, LaTeX class for Astronomy & Astrophysics
+%                                                       (c) EDP Sciences
+%-----------------------------------------------------------------------
+%
+%\documentclass[referee]{aa} % for a referee version
+%\documentclass[onecolumn]{aa} % for a paper on 1 column  
+%\documentclass[longauth]{aa} % for the long lists of affiliations 
+%\documentclass[rnote]{aa} % for the research notes
+%\documentclass[letter]{aa} % for the letters 
+%\documentclass[bibyear]{aa} % if the references are not structured 
+% according to the author-year natbib style
+
+%
+\documentclass{aa}
+\def\etal{{\em et al.}\ }
+
+%
+\usepackage{graphicx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{txfonts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[options]{hyperref}
+% To add links in your PDF file, use the package "hyperref"
+% with options according to your LaTeX or PDFLaTeX drivers.
+%
+\begin{document} 
+
+
+   \title{Variability of the accretion disc of V926 Sco inferred
+from tomographic analysis.}
+
+   \author{S. D. Connolly
+          \inst{1}, 
+	   C. S. Peris\inst{2,3}, 
+          \and
+          S. D. Vrtilek\inst{2}
+          }
+
+  \institute{University of Southampton, Highfield, Southampton, S017 1BJ, UK\\
+              \email{sdc1g08@soton.ac.uk}
+         \and
+             Harvard-Smithsonian Center for Astrophysics, Cambridge, MA 02138, USA\\
+             \email{cperis@cfa.harvard.edu}
+	     \email{svrtilek@cfa.harvard.edu}
+	\and
+	     Department of Physics, Northeastern University, Boston, MA 02115, USA\\
+	     \email{c.peris@neu.edu}
+             }
+
+   \date{}
+
+% \abstract{}{}{}{}{} 
+% 5 {} token are mandatory
+ 
+  \abstract
+  % context heading (optional)
+  % {} leave it empty if necessary  
+	{}
+  % aims heading (mandatory)
+{To study the structure and variability of the disc of the low-mass X-ray binary V926 Sco 
+(4U1735-44).}
+ % methods heading (mandatory)
+{Phase-resolved spectroscopic observations 
+covering the orbital period of 0.23d were obtained with the Walter Baade 6.5m Magellan Telescope at the Las Campanas Observatory in June 2010 and June 2011. 
+Spectral analysis including deriving a H$\alpha$ radial velocity curve and 
+constructing 
+Doppler and modulation tomogram of the strongest lines are undertaken in 
+order to determine  
+the location and behavior of the observed spectral features.
+}
+  % results heading (mandatory)
+  {We use H$\alpha$ radial velocities to
+derive an improved value for the systemic velocity of -109$\pm$4km/s.
+The FWHM of the lines observed in common with previous authors
+are significantly lower suggesting much reduced velocities in the
+system. The equivalent width of the Bowen fluorescence
+lines with respect to He~II$\lambda$4686 are a factor of two lower
+during our observations than those previously reported for the system
+suggesting reduced irradiation of the secondary.
+Both H$\alpha$ and He~II($\lambda$4686) show assymmetric emission that can
+be attributed to a bulge in the accretion disc as inferred from He~I observations
+by previous authors.  
+The X-ray fluxes from the source at times concurrent with
+the optical observations are  
+significantly lower during current optical observations than during 
+previous optical observations. } 
+  % conclusions heading (optional), leave it empty if necessary 
+   { We conclude that the system is in a lower accretion state compared to
+earlier observations; this explains both the lower velocities observed
+from the disc and 
+the reduction  
+of emission due to Bowen fluourscence detected from the  
+secondary.} 
+
+
+   \keywords{Accretion discs --
+                neutron star systems --
+                tomography 
+               }
+
+   \maketitle
+
+%
+%________________________________________________________________
+
+\section{Introduction}
+
+V926 Sco (4U 1735-444) is a low mass X-ray binary (LMXB) that is persistent in X-rays.  The shape of its X-ray colour-colour diagram caused Hasinger \& van der Klis \cite{hasinger} to classify it as an atoll source. 
+The system has an orbital period of 4.65 hours, discovered through optical photometry (Corbet~\etal\cite{corbet}, Pederson~\etal~\citep{pederson}), which showed a shallow sinusoidal variation in the light curve, interpreted as due to the varying aspect of the X-ray heated secondary object (e.g. van Paradijs et al. 1988). 
+Although sinusoidal variation can also be produced by asymmetries in the disc, 
+for example through the varying visibility of an irradiated inner disc bulge 
+(Hellier \& Mason \cite{hellier}) or by superhumps (Haswell~\etal~\cite{haswell}), 
+the variation was attributed to the donor by Casares~\etal \cite{casares}. 
+
+A periodic variation in the H$\alpha$ line observed by Smale~\etal \cite{smale} was confirmed by
+Smale \& Corbet \cite{smalecorbet} and attributed
+to varying emission originated from a bulge or splash region at or near the point on the disc at which the gas stream impacts the outer rim.  Augusteijn~\etal~\cite{august} found similar variation in He II ($\lambda$4686) and the blend of N III and C III emission lines produced by Bowen fluorescence ($\lambda\lambda$4634-4651), and attributed both to a disc bulge.
+
+Doppler tomography (Horne \& Marsh \cite{horne}) was carried out on V926 Sco by 
+Casares~\etal~\cite{casares}, using data taken in June 2003 with the FORS2 Spectrograph on the 8.2m Yepun Telescope at the Observatorio Monte Paranal. 
+Tomography of He II ($\lambda$4686) showed an extended area of bright emission on one side of the disc,     
+suggesting that the variation in this emission does arise from a bulge in the accretion disc 
+consistent with Smale \& Corbet \cite{smalecorbet}. 
+However, Casares~\etal~\cite{casares} found that the N III/C III emission was coincident with the estimated velocity of the donor star, as opposed to a disc bulge. They attributed this to fluorescence of the donor, irradiated by UV photons from the hot inner disc, as originally suggested for Sco X-1, along
+with several other X-ray binaries, by McClintock, Canizares \& Tartar \cite{mcclintock}.
+
+\begin{figure*}
+ \includegraphics[width=190mm, height=100mm]{avall.ps}
+ \caption{The smoothed average continuum-subtracted spectra of V926 Sco for the nights of June 6, 2010; June 22, 2011, and June 26, 2011 shows H$\alpha$ ($\lambda$6562), H$\beta$($\lambda$4861),  He~II($\lambda$4686 \& $\lambda$5412), C~IV ($\lambda$5807), and He~I ($\lambda$6678), in addition to the blend of N~III and 
+C~III emission comprising the Bowen complex ($\lambda\lambda$4634-4651). Interstellar lines are marked as IS.}
+\label{avspec}
+\end{figure*}
+
+Our spectra covered nearly twice the bandwidth of Casares~\etal~\cite{casares} including in particular the H$\alpha$ line for
+which no previous tomographic study has been done and which
+is particularly useful for studying emission from the disc.  In addition to 
+Doppler tomography we also undertake {\it modulation} tomography (Steeghs et al 2003)
+which allows us to take into consideration variations in the brightness of the components of the system which are harmonic with the orbital period. As Doppler tomography is limited by the assumption that the brightness of the components of a system do not vary, its combination with modulation tomography allows more accurate interpretation of the velocity maps of a system.
+In section 2 we describe the optical observations obtained and used for this study.  In section 3 we present our analysis
+of the spectral features.  In section 4 we present Doppler and modulation tomography of the lines and end with a summary
+and conclusions in section 5.
+
+\section{Observations and Data Reduction}
+
+Observations of V926 Sco were carried out on the nights of 2010 June 5,7 and 2011 June 22, 26, using the {\it IMACS} spectrograph on the Walter Baade 6.5 m Magellan telescope at the Las Campanas Observatory. A long-slit diffraction grating with 600 lines/mm at a tilt angle of  $11.23^{o}$ was used, giving a wavelength range of approximately 4449-7581${\AA}$
+(excluding small gaps due to CCD chip edges), with $37$ km s$^{-1}$ (FWHM) resolution.
+A slit width of 0.9 arc seconds was used on 2011 June 22 and of 0.7 arc seconds on 2011 June 26 and 2010 June 5,7. 60 useful spectra were obtained, with exposures of 420-600 seconds, covering a total of approximately 1.5 orbital periods
+(Table 1). HeNeAr comparison lamp arcs were taken after approximately every three exposures.
+The images were corrected for bias and flat-fielded, then the spectra were extracted using 
+{\it IRAF} optimal extraction for a weak spectrum, as described by Massey, Valdes, 
+\& Barnes \cite{massey}, to give the best possible signal to noise ratio. 
+Anomalies due to cosmic rays and CCD errors were removed. The spectra were
+ wavelength-calibrated using the time-nearest HeNeAr comparison arcs, with a 
+separate 
+second order polynomial fit of each of the four CCD chips across which the spectra
+ were spread. In each case, the RMS scatter was $<0.01$ {\AA}.
+
+\begin{table}
+      \caption{Observation Log.}
+         \label{tab1}
+         \begin{tabular}{lcc}
+            \noalign{\smallskip}
+            Date      &  No. of spectra & Exposure(s)  \\
+            \hline
+            2010 June 5 & 15 &   420-600  \\
+	    2010 June 7 &  4 & 600\\
+	    2011 June 22 & 15& 600\\
+	    2011 June 26&26& 600\\
+            \hline
+         \end{tabular}
+   \end{table}
+
+
+%
+ \begin{table}
+      \caption{Emission Line Parameters}
+         \label{tab2}
+         \begin{tabular}{lccc}
+            \hline
+            Line      &  FWHM & EW&Centroid \\
+		 & (km s$^{-1}$)&(Inst Cts)&($\AA$)\\
+            \hline
+06/05/2010&&&\\
+		Bowen blend &956$\pm$31&23.1$\pm$1.5&4641.1\\
+		He~II $\lambda$4686 &420$\pm$20&23.5$\pm$2.0&4685.6\\
+		H$\beta$&---&---&4860.9\\
+		H$\alpha$&417$\pm$10&60.6$\pm$2.6&6561.2\\
+		He~I $\lambda$6678&---&---&6678.0\\
+\hline
+06/07/2010&&&\\
+                Bowen blend &710$\pm$39&23.0$\pm$2.4&4640.1\\
+                He~II $\lambda$4686 &425$\pm$23&41.3$\pm$4.3&4686.1\\
+                H$\beta$&---&---&4860.9\\
+                H$\alpha$&419$\pm$10&69.2$\pm$5.1&6562.3\\
+                He~I $\lambda$6678&---&---&6678.0\\
+\hline
+06/22/2011&&&\\ 
+                Bowen blend &770$\pm$63&6.9$\pm$1.0&4641.9\\
+                He~II $\lambda$4686 &380$\pm$25&11.5$\pm$1.4&4684.6\\
+                H$\beta$&313$\pm$65&4.2$\pm$1.6&4860.3\\
+                H$\alpha$&394$\pm$10&37.3$\pm$1.8&6561.8\\
+		He~I $\lambda$6678&---&---&6679.9\\
+\hline
+06/26/2011&&&\\
+                Bowen blend &928$\pm$33&11.3$\pm$1.0&4641.3\\
+                He~II $\lambda$4686 &383$\pm$11&24.3$\pm$1.3&4684.7\\
+                H$\beta$&283$\pm$24&8.9$\pm$1.5&4859.8\\
+                H$\alpha$&379$\pm$9&65.1$\pm$1.6&6561.3\\
+		He~I $\lambda$6678&483$\pm$28&10.7$\pm$1.2&6676.8\\ 
+            \noalign{\smallskip}
+            \hline
+         \end{tabular}
+   \end{table}
+
+\section{Spectral features and profiles}
+%
+
+The spectra of V926 Sco averaged over the nights of June 5, 2010 and
+June 22,27 2011 are presented in Fig. \ref{avspec}. Each contains relatively strong H$\alpha$ emission in addition to weaker lines of H$\beta\lambda$4861, He~II $\lambda$4686 \& $\lambda$5412, a blend of N III and C III emission lines attributed to Bowen fluorescence 
+$\lambda\lambda$4641-4651, Ci~IV$\lambda$5807, 
+and He~I$\lambda$6678. These emission features are consistent with those found by previous spectroscopic studies (Casares~\etal~\cite{casares}, Cowley~\etal \cite{cowley}, Augusteijn~\etal~\cite{august},
+Smale~\& Corbet \cite{smalecorbet}). 
+Several absorption features attributed to interstellar and atmospheric absorption  
+are also present.
+The flux standard Feige 110 was observed on the night of June 22, 2011, however,
+none of our nights were photometric.
+We therefore plot only relative intensities and give EWs in instrument counts.
+
+Fig. \ref{phasecur} show the evolution of the main spectral features over
+the orbital period.  We use the spectroscopic ephemeris provided by Casares~\etal: 
+
+T$_o$(HJD) = 2452813.495(3) + 0.19383351(32)E
+
+to determine orbital phases.  H$\alpha$ and He~II $\lambda$4686
+display
+the classic double peak variation as expected from an accretion disc.
+In order to determine the relative contribution of the spectral 
+features we fit the average nightly profiles with Gaussians.  For the
+Bowen blend we used Gaussians representing the N~III transitions 
+($\lambda\lambda$4634,4641,4642) 
+and C~III transitions 
+($\lambda\lambda$4647,4651,4652), but only two Gaussians ($\lambda$4641
+and $\lambda$4651) were required for satisfactory fits.  
+For H$\alpha$, He~II $\lambda$4686, and He~I $\lambda$6678 we 
+required two Gaussians to
+represent the blue and red shifted emission from the disc.
+The fits are plotted in Fig. \ref{fit1} and values for the fitted parameters are listed in Table 2. For all lines we used single Gaussians to determine
+the instrumental EW. 
+The source appears to be reduced in intensity from 2010
+to 2011, however since we do not have absolute fluxes we
+cannot determine this.  We do find that the equivalent width
+of the Bowen complex is significantly reduced from 2010 to 2011. 
+The reduction in flux observed for June 22, 2011 compared to June 26, 2011 is 
+attributed to the larger slit size used due to poor seeing. 
+The increase in slit size also reduced our spectral resolution;
+hence for our tomographic analysis we use only data from June 5, 2010 and June 26, 2011.
+The four spectra obtained on June 8, 2010 were used only to
+complete the radial velocity curve.
+
+Figure \ref{radvel} shows the radial velocities for H$\alpha$ 
+obtained by cross-correlating all 60 individual spectra with Gaussians of FWHM
+as listed in Table 2.   
+We used the spectrosopic ephemerides of Casares~\etal~(2006).  Our best-fit 
+sine-wave to this data give us a systemic velocity of -109$\pm$4km/s with a
+semi-amplitude of 95$\pm5$km/s. 
+
+
+\section{Tomography}
+
+Tomography is an imaging technique allowing two-dimensional velocity-space maps of a system to be reconstructed from spectra taken at multiple orbital phases. Spectra are assumed to be one-dimensional projections of the system in velocity space at a given phase. Under this assumption, if an accurate ephemeris is known an inversion technique can be used to produce possible fits to the data. In this case, a reduced $\chi^2$ test was used to modify an arbitrary starting image (e.g. a uniform or gaussian distribution) such that the predicted data from this image fit the real data. Due to the large number of possible fits for a given value of $\chi^2$ , the {\it `Maximum Entropy Method'} (MEM) is employed to select the image which is most likely to be accurate; the image with the highest entropy is chosen at each iteration, on the assumption that a higher entropy corresponds to a smoother and therefore more physically realistic image of the system (Narayan \& Nityananda \cite{narayan}). For a complete description of imaging accretion discs using Doppler tomography, see Marsh \& Horne \cite{marsh}.
+
+Modulation tomography produces additional velocity maps showing the magnitude of periodic, sinusoidal modulations in the brightness of the structural features of the system, in addition to the velocity maps of the time-averaged brightness seen in Doppler tomography. This allows variations in the brightness of a system to be taken into account when interpreting the time-averaged velocity maps. Although modulation tomography allows more accurate interpretation of velocity data than Doppler mapping alone, which assumes emission to be constant over the orbital period, data with a higher signal to noise ratio is required. 
+For a more detailed description of modulation tomography of emission lines, see Steeghs \cite{steeghs}.
+
+\begin{figure*}
+\includegraphics[width=60mm]{H_2010.ps}
+\includegraphics[width=60mm]{halphaline_2011.ps}
+\includegraphics[width=60mm]{bowenline_2011.ps}
+\hspace{0.7cm}
+\caption{{\bf Left (a):} H$\alpha$ spectra from 2010 in 10 phase bins, showing the
+evolution of the lines over the orbital period. The dashed line marks
+the laboratory wavelength of 6562.8$\AA$.
+{\bf Center (b):} As in (a) for June 26,2011.
+{\bf Left (c):} 2011 data of and He II and the Bowen blend in 10 phase bins, showing the
+evolution of the lines over the orbital period. The dashed lines represent
+$\lambda$4640 and $\lambda$4686.} 
+\label{phasecur}
+\end{figure*}
+
+
+\begin{figure*}
+\includegraphics[width=88mm]{halphafit4.ps}
+ \includegraphics[width=88mm]{bowenfit4.ps}
+ \hspace{0.7cm}
+ \caption{Gaussian fits to H$\alpha$, He~I ($\lambda$6678), 
+the Bowen complex, He~II$\lambda$4686, and H$\beta$ for each of the
+nights 
+listed in Table 1. Values of the fitted parameters are listed in Table 2. 
+{\bf Left (a):} H$\alpha$ and He~I ($\lambda$6678) both showed the classic
+double peak expected from emission from an accretion disc and required two 
+gaussians for good fits.
+{\bf Right (b):}
+Fits using two gaussians for the Bowen blend ($\lambda$4634 and
+$\lambda$4641). He~II $\lambda$4686 and H$\beta$ also displayed 
+double peaks and required two
+gaussians.}
+\label{fit1}
+\end{figure*}
+
+\begin{figure}
+\includegraphics[width=88mm]{radvel5.ps}
+ \hspace{0.7cm}
+\caption{Radial velocity curves for H$\alpha$ using the spectroscopic
+ephemerides of Casares~\etal~(2006). 1$\sigma$ errors and the best-fit sinusoid are indicated.
+The derived systemic velocity is 109$\pm$4 km/s}.
+\label{radvel}
+\end{figure}
+
+\begin{figure*}
+\includegraphics[width=88mm]{halpha_115.ps}
+ \includegraphics[width=88mm]{he2_115.ps}
+ \hspace{0.7cm}
+ \caption{Modulation tomograms.   In
+ each
+set of four panels: the observed data (top left) are well reproduced by the fitted
+data (top right); the lower left-hand panel shows the constant part of the
+disc with a strong hot spot; the lower right-hand panel illustrates the
+amplitude of the modulation. 
+Overplotted on the tomograms are the secondary Roche lobe, predicted
+primary, secondary, and center-of-mass positions (crosses), the lower curved
+line
+represents the accretion stream ballistic trajectories
+and the upper curved line the Keplerian velocity of the disc
+along the stream, the crosses along the trajectories represent
+steps of 0.1 R$_{L1}$ (where R$_{L1}$ is the distance from the compact
+object to the inner Lagrangian point)
+from the primary and asterisks show the apsides of
+the stream.
+{\bf Left (a):} H$\alpha$ using 15 spectra from June 5, 2010 and
+26 from June 26, 2011. {\bf Right (b):}
+He~II ($\lambda$4686) using 15 spectra from June 5, 2010 and
+26 from June 26, 2011.}
+\label{mod1}
+\end{figure*}
+
+
+\begin{figure*}
+\includegraphics[width=98mm]{Bowen_Blend_2011.ps}
+\includegraphics[width=84mm]{4640_highres_gam115.ps}
+\caption{{\bf Left (a):} Doppler tomogram of the N~III$\lambda$4640
+component of the Bowen complex from 2011. 
+{\bf Right (b):} Modulation tomogram of the Bowen blend using
+June 5, 2010 and June 26, 2011 data combined.
+}
+\label{bowdop}
+\end{figure*}
+
+\begin{figure}
+\includegraphics[width=88mm,angle=0]{1735m44.1day.ps}
+ \caption{
+The {\it RXTE/ASM} light curve of V926 Sco.  Marked in blue is the time of optical observations taken in June 2003 by
+Casares~\etal~\cite{casares}, times of our optical observations, made in June 2010 \& 2011 are marked in red.
+The X-ray count rate during the current
+observations, 11$\pm$3 cts/sec (2011) and 8$\pm$3 cts/sec (2010) represent upper limits since the gain of the RXTE/ASM was higher
+during its last two years of operation (Remillard, personal communication) and are
+significantly lower than during the 2003 observation
+(18$\pm$2 cts/sec).}
+\hspace{0.3cm}
+\label{rxte}
+\end{figure}
+
+
+The modulation tomograms we produced are shown in Figs. \ref{mod1}a,b,\ref{rxte}a. 
+In each case, the figure is split into four panels. The first two panels contain the trail of the original spectra around the chosen emission line and the trail predicted from the final velocity map, for which $\chi^2$ is minimised. Lighter colours indicate higher intensities in each case. 
+Each figure also contains two two-dimensional velocity maps. The lower
+right panel is the same as those produced by Doppler tomography, 
+showing the brightness of the components of the system averaged over the orbital period. The lower left panel shows the amplitude of modulations in the brightness of the components of the system which are harmonic with the orbital period. In this case, bright areas indicate the regions with the greatest amplitude of modulation.
+
+Each of the tomograms is overlaid with estimated values for the velocities of the neutron star, the donor's Roche Lobe and the centre of mass of the system. 
+We used $K_2$ = 298$\pm$83i km/s  as determined by Casares~\etal \cite{casares}. 
+Since Casares~\etal~suggested a range (0.05-0.41) 
+of mass ratios for V926 Sco we adopted their 
+middle value of 0.23 giving us a $K_1$ of 68 km/s.
+We tried both our derived value of $-109\pm 4 km s^{-1}$ and the Casares~\etal
+value of $-140\pm4 km s^{-1}$ for the systemic velocity. Tests
+using a range of values near these velocities favored our
+derived value for the best fits. 
+The Keplerian velocity of the disc along the accretion stream and the ballistic trajectory of the stream are also plotted, with circles along each line indicating steps of 0.1 Lagrangian radii from the compact object. 
+
+
+Because the time-averaged H$\alpha$   
+and He~II $\lambda$4686 showed little change in FWHM and EW between 
+June 5, 2010 and June 26, 2011 we were able to combine the
+data to improve our tomograms.   
+The Doppler tomograms of these lines are consistent with the
+modulation tomograms but show less detail so we present only the
+modulation tomograms in this paper.
+Both lines show significant enhancement of emission  
+in the lower right quadrant (Figs. \ref{mod1}a,b); 
+the corresponding modulation maps also  
+show strong variation around this regions as would be expected of 
+any non-symmetric feature in the system.
+The enhanced region are superposed on cresent shaped
+emission with H$\alpha$ tomogram showing second cresent 
+in the upper right quadrant.  
+There is also H$\alpha$ emission that can be associated with
+the heated side of the secondary.
+
+Since the EW of the Bowen complex changed by a factor of two from 2010 to 
+2011 we made separate tomograms for the two years.  
+Because of the complexity and weakness of the Bowen blend we
+first constructed Doppler tomograms.
+When the complex was stronger (2010) we had  0.9 phase coverage in
+only 12 bins which made for poor maps and indeed showed only 
+noise, in 2011 although the complex was weak we had full phase
+coverage with over 20 phase bins (Fig. \ref{bowdop}a), and found a hint
+of emission consistent with the disc bulge but no emission  
+associated with the secondary as reported by Casares~\etal~
+\cite{casares}. 
+A modulation tomogram combining the 2010 and 2011 data showed
+the same behavior as the Doppler map for 2011 (Fig. \ref{bowdop}b).
+
+
+\section{Discussion and Conclusions}
+
+Modulation tomography of the He~II and H$\alpha$ emission lines in the spectra of V926 Sco were found to support the suggestion of earlier 
+authors (Casares~\etal~2006; Augusteijn~\etal~1998; Smale
+\& Corbet 1991) that the accretion disc around the primary contains a large, extended bright region, attributed to a bulge in the disc.
+
+Our observations show significant changes in the disc and secondary
+star emission from V926 Sco both since the 2003 observations of
+Casares~\etal~(2006) and between 2010 and 2011 in our own observations.
+We find that the FWHM of the Bowen complex, He~II$\lambda$4686, and
+H$\beta$  
+are lower by a factor of about two than those reported by 
+Casares~\etal~(2006).  These suggests significantly lower velocities
+in the system. 
+While we only have
+EW in instrumental counts, we find that the EW of the Bowen complex
+is of the same order or considerably less than the EW of He~II$\lambda$4686
+whereas Casares~\etal~found the EW of the Bowen complex to be twice
+that of He~II.    
+ 
+A significant reduction in X-ray emission is seen over the same period in the {\it RXTE/ASM} light curve of the system; the X-ray flux has decreased from an average of approximately 17 counts s$^{-1}$ in 2003 to approximately 12 counts s$^{-1}$ in 2010 and 10 counts s$^{-1}$ in 2011 (see Fig. \ref{rxte}). In
+particular, since the 2010-2011 data were obtained during the last two years of the operation of {\it RXTE}, during which it is known that the {\it ASM} was running at a higher gain than that used for calibration, meaning that the real count rate is still lower. This indicates a reduction in the accretion rate of the system. 
+Since Bowen fluorscence of the secondary is attributed to UV heating of the
+secondary surface by irradiation, the lower accretion rate is consistent with
+there being lower flux from the disc and compact object and hence
+less illumination to produce Bowen from the
+secondary.  Since a lower accretion rate is associated with a lower
+temperature at a given radius this also explains the lower velocities
+observed from the disc. 
+
+In both H$\alpha$ and He~II$\lambda$4686 we see crescent
+shaped emission as seen by Casares~\etal~from He~II.
+This suggests the possibility of an eccentric disc,
+a phenomenon 
+that occurs at mass ratios below $\sim 0.33$ (Haswell~\etal~\cite{haswell}). Normally, the comparatively large mass of the compact object, together with conservation of angular momentum, leads to the formation of a circular accretion disc centred on the compact object. Below this mass ratio, however, the 3:1 resonance has been found to cause eccentric instability, leading to a non-axisymmetric, precessing disc Haswell~\etal~\cite{haswell}. In these cases, we would expect so called ‘superhumps’ to be observed in the light curve of the system 
+(Calvelo~\etal~\cite{calvelo}; Zurita~\etal~\cite{zurita}). While
+superhumps 
+have not been detected in photometric studies of V926 Sco (e.g. 
+Corbet~\etal~\cite{corbet}; Pederson, van Paradijs, \& Lewin\cite{pederson})
+an eccentric disc cannot be ruled out. Higher resolution observations
+at different epochs are required to either confirm or refute this possibility. 
+The offset crescent shapes seen in the strong H$\alpha$ tomogram
+may also suggest that angular momentum in the
+disc is being transported by density waves in the disc.  
+This behavior has been seen in tomography of Cataclysmic Variables 
+(Steeghs~\etal~\cite{steeghs2} and
+references therein).  Steeghs~\etal~\cite{steeghs2} showed that a  
+two armed trailing spiral in position coordinates, maps into such 
+two armed crescent shapes in velocity coordinates.
+
+H$\alpha$ emission from the heated side of the secondary was also
+seen by Peris~\etal~\cite{peris} in V691 Cra, D'Avanzo~\etal~\cite{davanzo} 
+in Cen X-4 (attributed
+to irradiation by the hotspot), and by Gonzalez 
+Hernandez \& Casares\cite{gonzalez} in V616 Mon (attributed to 
+chromospheric activity induced by rapid 
+rotation).   
+
+
+\begin{acknowledgements}
+We would like to thank the Las Campanas Observatory for the use of the Baade Telescope and RXTE/ASM team. We gratefully acknowledge the use of the {\it MOLLY} and {\it DOPPLER} software written by T.R. Marsh and the {\it MODMAP} software written by D. Steeghs. Funded in part by a SmithsonianInstitution Endowment Grant to SDV.
+\end{acknowledgements}
+
+\begin{thebibliography}{}
+
+\bibitem[1999]{armatage} Armatage, P.J., Livio, M., 1999, ApJ, 493, 898
+
+\bibitem[1998]{august} Augusteijn, T., van der Hooft, F., de Jong, J.A., van Kerwijk, M.H., van Paradijs, J., 1998, A\&A, 332, 561
+
+\bibitem[2009]{calvelo} Calvelo, D.E., Vrtilek, S.D., Steeghs, D., Torres, M.A.P., Neilsen, J., Filippenko, A.V., Gonzalez Hernandez, J.I., 2009, MNRAS, 399, 539
+
+\bibitem[2004]{canizares} Canizares, C.R, McClintock, J.E., Grindlay, J.E., 1979, ApJ, 234, 556
+
+\bibitem[2006]{casares}Casares, J., Cornelisse, R., Steeghs, D., Charles, P.A., Hynes, R.I.,  O'Brien, K., Strohmayar, T.E., 2006, MNRAS, 373, 1235
+
+\bibitem[1986]{corbet} Corbet, R.H.D., Thorstensen, J.R., Charles, P.A., Menzies, J.W., Naylor, T., Smale, A.P., 1986, MNRAS, 222, 15
+
+\bibitem[2003]{cowley} Cowley, A.P., Schmidtke, P.C., Hutchings, J.B.,
+\& Crampton, D. 2003, ApJ, 125, 2163.
+
+\bibitem[2011]{gonzalez}Gonzalez Hernandez, \& Casares, J., 2010, A\&A, 516, A58  
+
+\bibitem[1989]{hasinger} Hasinger, G., van der Klis, M., 1989, A\&A, 225, 79
+
+\bibitem[[1995]{herbig} Herbig, G.H., 1995, ARA\&A,33,19
+
+\bibitem[2001]{haswell} Haswell, C.A., King, A.R., Murray, J.R., Charles, P.A., 2001, 
+MNRAS, 321, 475
+
+\bibitem[1989]{hellier} Hellier, C., Mason, K.O., 1989, MNRAS, 239, 715
+
+\bibitem[1986]{horne} Horne, K., Marsh, T.R. 1986, MNRAS, 218, 716
+
+\bibitem[1988]{marsh} Marsh, T.R., Horne, K., 1988, MNRAS 235, 269
+
+\bibitem[1992]{massey} Massey, P., Valdes, F., Barnes, J., 1992, 'A User's Guide to Reducing Slit Spectra with IRAF', (http://iraf.noao.edu/iraf/docs/)
+
+\bibitem[1975]{mcclintock} McClintock, J.E., Canizares, C.R., Tarter, C.B., 1975, ApJ, 198, 641
+
+\bibitem[2008]{neilsen} Neilsen, J., Steeghs, D., Vrtilek, S.D., 2008, MNRAS, 384, 849
+
+\bibitem[1986]{narayan} Narayan, R., Nitayananda, R., 1986, ARA\&A, 24, 127
+
+\bibitem[1988]{paradijs} van Paradijs, J., van der Klis, M., Pederson, H., 1988, A\&A, 76, 185
+
+\bibitem[1981]{pederson} Pederson, H., van Paradijs, J.,Lewin, W.H.G., 1981, Nature, 294, 725
+
+\bibitem[2012]{peris} Peris, C.S., \& Vrtilek, S.D. 2012, MNRAS, 427, 1043 
+
+\bibitem[1991]{pringle} Pringle, J.E., 1981, ARA\&A, 19, 137
+
+\bibitem[1991]{smalecorbet} Smale, A.P., Corbet, R.H.D., 1991, ApJ, 383, 853
+
+\bibitem[1984]{smale} Smale, A.P., Charles, P.A., Tuohy, I.R., Thorstensen, J.R., 1984, MNRAS, 207,29
+
+\bibitem[2003]{steeghs} Steeghs, D., 2003, MNRAS, 344, 448S
+
+\bibitem[2000]{steeghs2} 
+	Steeghs, D., Horne, K., Harlaftis, E. T., Stehle, R., 2000,
+NewAR, 44, 13.
+
+\bibitem[2002]{zurita} Zurita, C., Casares, J., Shahbaz, T., Wagner, R.M., Foltz, C.B., Rodrguez-Gil, P., Hynes, R.I., Charles, P.A., Ryan, E., Schwarz, G., Starrfield, S.G., 2002, MNRAS, 333, 791
+
+\end{thebibliography}
+
+\end{document}
+
